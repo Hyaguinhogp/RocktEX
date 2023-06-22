@@ -1,14 +1,14 @@
 import GamesOnSale from "../../components/GamesOnSale";
 import Highlights from "../../components/Highlights";
 import Navbar from "../../components/Navbar";
-import { HighlightsData } from "../../database";
+import { GamesData, HighlightsData } from "../../database";
 
 const Home = () => {
     return(
         <>
             <Navbar />
             <Highlights highlights={HighlightsData} />
-            <GamesOnSale />
+            <GamesOnSale Games={GamesData} />
         </>
     )
 }
