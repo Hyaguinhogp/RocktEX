@@ -122,3 +122,9 @@ export const DefaultContent = styled.div`
     width: 100%;
     max-width: 1200px;
 `;
+
+export const DefaultPage = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+`
