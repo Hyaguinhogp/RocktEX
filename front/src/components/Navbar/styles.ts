@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
 
 export const NavbarContainer = styled(DefaultContainer)`
+    position: fixed;
+    z-index: 2;
+    top: 0;
     padding-top: 15px;
     padding-bottom: 15px;
+    background-color: white;
     box-shadow: 2px 2px 20px var(--grey-05);
-    z-index: 5;
-    
 `
 
 export const NavbarContent = styled(DefaultContent)`

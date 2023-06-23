@@ -1,15 +1,16 @@
 import GamesOnSale from "../../components/GamesOnSale";
 import Highlights from "../../components/Highlights";
 import Navbar from "../../components/Navbar";
-import { HighlightsData } from "../../database";
+import { GamesData, HighlightsData } from "../../database";
+import { DefaultPage } from "../../styles/global";
 
 const Home = () => {
     return(
-        <>
+        <DefaultPage>
             <Navbar />
             <Highlights highlights={HighlightsData} />
-            <GamesOnSale />
-        </>
+            <GamesOnSale Games={GamesData} />
+        </ DefaultPage>
     )
 }
 
