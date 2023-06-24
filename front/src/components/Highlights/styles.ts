@@ -2,7 +2,8 @@ import styled from "styled-components"
 import { DefaultContainer, DefaultContent } from "../../styles/global"
 
 export const HighlightsContainer = styled(DefaultContainer)`
-    margin-top: 40px;
+    flex-direction: column;
+    margin-top: 20px;
 `
 
 export const HighlightsContent = styled(DefaultContent)`

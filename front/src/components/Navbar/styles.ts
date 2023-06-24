@@ -7,8 +7,7 @@ export const NavbarContainer = styled(DefaultContainer)`
     top: 0;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: white;
-    box-shadow: 2px 2px 20px var(--grey-05);
+    background-color: var(--theme-04);
 `
 
 export const NavbarContent = styled(DefaultContent)`
@@ -20,6 +19,7 @@ export const NavbarContent = styled(DefaultContent)`
 
     .navbar_logo {
         font: var(--Heading-5-300);
+        color: white;
     }
     .navbar_logo::after {
         position: relative;
@@ -30,7 +30,8 @@ export const NavbarContent = styled(DefaultContent)`
     }
 
     span {
-        color: var(--theme-02);
+        color: var(--theme-03);
+        font-weight: 600;
     }
 
     svg {
