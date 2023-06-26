@@ -3,7 +3,7 @@ import HighlightTitle from "../../components/HighlightTitle";
 import Highlights from "../../components/Highlights";
 import MostRead from "../../components/MostRead";
 import Navbar from "../../components/Navbar";
-import { GamesData, HighlightsData } from "../../database";
+import { GamesData, HighlightsData, MostReads } from "../../database";
 import { DefaultPage } from "../../styles/global";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
             <HighlightTitle />
             <Highlights highlights={HighlightsData} />
             <GamesOnSale Games={GamesData} />
-            <MostRead />
+            <MostRead most_reads={MostReads} />
         </ DefaultPage>
     )
 }

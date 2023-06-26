@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
 
+interface IMostReadCardContainerProps {
+    size: "130px" | "100px"
+    url_image: string
+}
+
 export const MostReadCardContainer = styled.div`
     display: flex;
     align-items: start;
@@ -20,9 +25,11 @@ export const MostReadCardContainer = styled.div`
 
     figure {
         display: flex;
-        width: 130px;
-        height: 130px;
-        background-color: var(--grey-05);
+        width: ${({ size }: IMostReadCardContainerProps) => size};
+        height: ${({ size }: IMostReadCardContainerProps) => size};
+        background: url(${({ url_image }: IMostReadCardContainerProps) => url_image});
+        background-position: 50%;
+        background-size: cover;
         border-radius: 4px;
     }
 
@@ -34,7 +41,7 @@ export const MostReadCardContainer = styled.div`
         overflow: hidden;
 
         h2 {
-            font: var(--Heading-6-400)
+            font: var(${({ size }: IMostReadCardContainerProps) => size == "130px" ? "--Heading-6-400" : "--Heading-7-300"});
         }
     }
 

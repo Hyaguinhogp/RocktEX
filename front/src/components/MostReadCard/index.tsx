@@ -1,16 +1,23 @@
+import { IMostRead } from "../../interfaces/MostReads";
 import { MostReadCardContainer } from "./styles";
 
-const MostReadCard = () => {
+interface IMostReadCardProps {
+    position: number
+    size: "130px" | "100px"
+    data: IMostRead
+}
+
+const MostReadCard = ({ position, size, data}: IMostReadCardProps) => {
     return (
-        <MostReadCardContainer>
+        <MostReadCardContainer size={size} url_image={data.url_image}>
             <div className="mrc__image-container">
-                <span className="rank">#1</span>
+                <span className="rank">#{position}</span>
                 <figure></figure>
             </div>
 
             <div className="mrc__info">
-                <h2>Final Fantasy XVI’s lack of diverse characters makes a huge world feel small</h2>
-                <span className="category">categoria</span>
+                <h2>{data.title}</h2>
+                <span className="category">{data.category}</span>
             </div>
         </MostReadCardContainer>
     )
