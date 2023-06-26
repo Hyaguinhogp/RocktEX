@@ -3,7 +3,7 @@ import { DefaultContainer, DefaultContent } from "../../styles/global";
 
 export const NavbarContainer = styled(DefaultContainer)`
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     top: 0;
     padding-top: 15px;
     padding-bottom: 15px;
