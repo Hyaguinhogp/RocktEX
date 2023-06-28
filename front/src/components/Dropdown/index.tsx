@@ -1,11 +1,21 @@
 import { DropdownContainer, DropdownContent } from "./styles"
 import { ReactComponent as SearchIcon } from "../../assets/search_icon.svg"
+import { useEffect } from "react"
 
 interface IDropdownProps {
     desactiveDropdown: () => void
 }
 
 const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
+
+    useEffect(() => {
+        document.body.classList.add("modal_active");
+
+        return () => {
+            document.body.classList.remove("modal_active");
+        }
+    }, []);
+
     return (
         <DropdownContainer>
             <DropdownContent initial={{ x: "200px" }} animate={{ x: "0px" }} exit={{ x: "100%" }} transition={{ duration: 0.3 }}>
