@@ -1,8 +1,5 @@
 import { NavbarContainer, NavbarContent } from "./styles";
-import { CiSearch } from "react-icons/ci";
-import { AiOutlineBars } from "react-icons/ai";
-import { ReactComponent as Search } from "../../assets/search_icon.svg";
-import { ReactComponent as DropdownButton } from "../../assets/dropdown_button.svg";
+import { CiMenuBurger } from "react-icons/ci";
 
 interface INavbarProps {
     activeDropdown: () => void
@@ -16,8 +13,7 @@ const Navbar = ({ activeDropdown }: INavbarProps) => {
                     <h2 className="navbar_logo">Rockt<span>EX</span></h2>
                 </div>
                 <div>
-                    <Search />
-                    <DropdownButton onClick={() => activeDropdown()} />
+                    <CiMenuBurger onClick={() => activeDropdown()} />
                 </div>
             </NavbarContent>
         </NavbarContainer>
