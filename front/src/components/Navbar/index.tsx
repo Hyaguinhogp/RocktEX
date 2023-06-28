@@ -4,7 +4,11 @@ import { AiOutlineBars } from "react-icons/ai";
 import { ReactComponent as Search } from "../../assets/search_icon.svg";
 import { ReactComponent as DropdownButton } from "../../assets/dropdown_button.svg";
 
-const Navbar = () => {
+interface INavbarProps {
+    activeDropdown: () => void
+}
+
+const Navbar = ({ activeDropdown }: INavbarProps) => {
     return(
         <NavbarContainer>
             <NavbarContent>
@@ -13,7 +17,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <Search />
-                    <DropdownButton />
+                    <DropdownButton onClick={() => activeDropdown()} />
                 </div>
             </NavbarContent>
         </NavbarContainer>
