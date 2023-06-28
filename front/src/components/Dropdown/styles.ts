@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-interface IDropdownContainerProps {
-    isDropdownActive: boolean
-}
-
 export const DropdownContainer = styled(motion.div)`
     position: fixed;
     z-index: 10;
@@ -14,15 +10,15 @@ export const DropdownContainer = styled(motion.div)`
     height: 100vh;
     top: 0;
     background-color: rgb(0, 0, 0, 0.4);
-    `
+`
 
 export const DropdownContent = styled(motion.div)`
     display: flex;
     flex-direction: column;
     width: 80%;
-    padding: 50px 20px;
-    background-color: var(--theme-00);
-    color: white;
+    padding: 30px 20px;
+    background-color: white;
+    color: black;
 
     .close-container {
         display: flex;
@@ -31,11 +27,12 @@ export const DropdownContent = styled(motion.div)`
     }
 
     .close-button {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         border: 0;
         cursor: pointer;
+        color: var(--theme-01);
     }
 
     .search-container {
@@ -46,21 +43,23 @@ export const DropdownContent = styled(motion.div)`
         padding: 0 15px;
         margin-bottom: 50px;
         border-radius: 4px;
-        background-color: rgb(0, 0, 0, 0.5);
+        background-color: rgb(0, 0, 0, 0.1);
 
         svg {
             width: 25px;
             height: 25px;
+            color: var(--theme-02);
         }
     }
 
     .search {
         height: 100%;
         background-color: transparent;
-        color: white;
+        color: black;
         outline: 0;
+        font-weight: 300;
     }
-
+    
     .search-button {
         background-color: transparent;
         border: 0;
@@ -71,6 +70,34 @@ export const DropdownContent = styled(motion.div)`
         flex-direction: column;
         gap: 15px;
         font: var(--Heading-4-400);
+
+        h3 {
+            position: relative;
+            left: 0px;
+            cursor: pointer;
+            transition: left 0.3s;
+        }
+
+        h3:hover {
+            left: 15px;
+        }
+
+        .selected {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-left: 20px;
+        }
+
+        .selected::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--theme-01);
+            left: -20px;
+        }
     }
 
     .suboptions-line::after {

@@ -1,6 +1,8 @@
 import { DropdownContainer, DropdownContent } from "./styles"
-import { ReactComponent as SearchIcon } from "../../assets/search_icon.svg"
+import { CiSearch } from "react-icons/ci";
+import { IoIosCloseCircle } from "react-icons/io"
 import { useEffect } from "react"
+import { motion } from "framer-motion"
 
 interface IDropdownProps {
     desactiveDropdown: () => void
@@ -20,17 +22,17 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
         <DropdownContainer>
             <DropdownContent initial={{ x: "200px" }} animate={{ x: "0px" }} exit={{ x: "100%" }} transition={{ duration: 0.3 }}>
                 <div className="close-container">
-                    <button className="close-button" onClick={() => desactiveDropdown()}>X</button>
+                    <IoIosCloseCircle className="close-button" onClick={() => desactiveDropdown()} />
                 </div>
                 <div className="search-container">
                     <input type="text" className="search" placeholder="Pesquisar..." />
                     <button className="search-button">
-                        <SearchIcon />
+                        <CiSearch />
                     </button>
                 </div>
                 <div className="options-container">
                     <div className="suboptions-container suboptions-line">
-                        <h3>Home</h3>
+                        <h3 className="selected">Home</h3>
                         <h3>Tecnologia</h3>
                         <h3>Games</h3>
                     </div>
