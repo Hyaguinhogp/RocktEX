@@ -12,8 +12,8 @@ interface IHighlightContentProps {
 
 export const HighlightContainer = styled(DefaultContainer)`
     position: relative;
-    padding: 15px;
     height: ${({size}: IHighlightContainerProps ) => size == 1 ? "600px" : "292px" };
+    padding: 15px;
 
     ::before {
         content: "";
@@ -27,6 +27,11 @@ export const HighlightContainer = styled(DefaultContainer)`
         background-position: 50%;
         filter: brightness(70%);
         z-index: -1;
+    }
+
+    @media (min-width: 1200px) {
+        height: ${({size}: IHighlightContainerProps ) => size == 1 ? "800px" : "392px" };
+        padding: 30px;
     }
 `
 
@@ -58,9 +63,26 @@ export const HighlightContent = styled(DefaultContent)`
 
     h2 {
         color: white;
-        font: var(--Heading-2-400);
         font: ${({size}: IHighlightContentProps ) => size == 1 ? "var(--Heading-2-400)" : "var(--Heading-4-400)" };
         font-family: 'Oswald', sans-serif;
+    }
+
+    @media (min-width: 1200px) {
+        .highlight_top_container {
+            font: var(--Heading-7-300);
+        }
+
+        .highlight_bottom_container {
+            h3 {
+                color: var(--grey-05);
+                font: var(--Heading-5-300);
+            }
+        }
+
+        h2 {
+            font: ${({size}: IHighlightContentProps ) => size == 1 ? "var(--Heading-1-400)" : "var(--Heading-3-400)" };
+            font-family: 'Oswald', sans-serif;
+        }
     }
 `
 

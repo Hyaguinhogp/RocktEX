@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
 
 export const MostReadContainer = styled(DefaultContainer)`
-    background-color: var(--theme-00);
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: var(--theme-00);
+
+    @media (min-width: 1200px) {
+        background-color: white;
+    }
 `
 
 export const MostReadContent = styled(DefaultContent)`
@@ -35,5 +39,10 @@ export const MostReadContent = styled(DefaultContent)`
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 50px;
+        background-color: var(--theme-00);
     }
 `

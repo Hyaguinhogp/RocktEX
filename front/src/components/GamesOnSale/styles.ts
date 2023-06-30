@@ -34,4 +34,15 @@ export const GamesOnSaleContent = styled(DefaultContent)`
         display: flex;
         gap: 20px;
     }
+
+    @media (min-width: 1200px) {
+        .blue-circle {
+            width: 15px;
+            height: 15px;
+        }
+
+        .gos_title {
+            font: var(--Heading-4-400);
+        }
+    }
 `
