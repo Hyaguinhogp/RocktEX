@@ -29,6 +29,8 @@ export const Global = createGlobalStyle`
         --grey-00: #1E1F1F;
 
         --Heading-0-500: 500 65px/64px 'Lexend', sans-serif;
+        --Heading-1-500: 500 40px/50px 'Lexend', sans-serif;
+        --Heading-1-400: 400 40px/50px 'Lexend', sans-serif;
         --Heading-2-400: 400 36px/45px 'Lexend', sans-serif;
         --Heading-3-400: 400 32px/40px 'Lexend', sans-serif;
         --Heading-4-400: 400 28px/35px 'Lexend', sans-serif;
@@ -126,5 +128,5 @@ export const DefaultContent = styled.div`
 export const DefaultPage = styled.div`
     display: flex;
     flex-direction: column;
-    padding-top: 60px;
+    padding-top: 59px;
 `

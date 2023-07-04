@@ -53,5 +53,30 @@ export const GameCardContainer = styled.div`
     .actual-price {
         font: var(--Heading-4-400)
     }
+
+    @media (min-width: 1200px) {
+        width: 400px;
+
+        .game__image {
+            height: 500px;
+        }
+
+        .game__title {
+            font: var(--Heading-4-400);
+            margin: 8px 0 8px 0;
+        }
+
+        .discount-percent {
+            font: var(--Heading-5-300)
+        }
+
+        .normal-price {
+            font: var(--Heading-6-300);
+        }
+
+        .actual-price {
+            font: var(--Heading-3-400)
+        }
+    }
 `
 

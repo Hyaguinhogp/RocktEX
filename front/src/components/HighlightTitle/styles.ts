@@ -12,6 +12,13 @@ export const HighlightTitleContainer = styled(DefaultContainer)`
         font-family: 'Oswald', sans-serif;
         color: white;
     }
+
+    @media (min-width: 1200px) {
+        h1 {
+            font: var(--Heading-1-400);
+            font-family: 'Oswald', sans-serif;
+        }
+    }
 `
 
 export const HighlightTitleContent = styled(DefaultContent)``
