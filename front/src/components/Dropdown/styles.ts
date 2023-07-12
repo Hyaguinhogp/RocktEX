@@ -18,7 +18,8 @@ export const DropdownContent = styled(motion.div)`
     width: 80%;
     padding: 30px 20px;
     background-color: white;
-    color: black;
+    background-color: var(--theme-00);
+    color: white;
 
     .close-container {
         display: flex;
@@ -48,14 +49,14 @@ export const DropdownContent = styled(motion.div)`
         svg {
             width: 25px;
             height: 25px;
-            color: var(--theme-02);
+            color: var(--theme-01);
         }
     }
 
     .search {
         height: 100%;
         background-color: transparent;
-        color: black;
+        color: white;
         outline: 0;
         font-weight: 300;
     }
@@ -92,8 +93,8 @@ export const DropdownContent = styled(motion.div)`
         .selected::before {
             content: "";
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: var(--theme-01);
             left: -20px;

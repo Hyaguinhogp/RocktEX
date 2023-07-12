@@ -5,7 +5,7 @@ export const PostComponentContainer = styled(DefaultContainer)`
 
 `
 
-export const PostComponentContent = styled(DefaultContent)`
+export const PostComponentContent = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -14,11 +14,11 @@ export const PostComponentContent = styled(DefaultContent)`
         width: 100%;
         justify-content: center;
         margin: 15px 0;
-        font-size: 12px;
+        font: var(--Heading-8-400);
     }
 
     .post-title {
-        font-size: 26px;
+        font: var(--Heading-4-400);
     }
 
     .post-author {
@@ -30,8 +30,7 @@ export const PostComponentContent = styled(DefaultContent)`
     }
 
     .post-author__name {
-        font-weight: 500;
-        font-size: 18px;
+        font: var(--Heading-7-500);
         margin-left: 5px;
         color: var(--theme-01);
     }
@@ -54,9 +53,32 @@ export const PostComponentContent = styled(DefaultContent)`
     }
 
     .post-text {
-        font-weight: 300;
-        font-size: 17px;
+        font: var(--Heading-7-300);
         margin: 15px 0;
         line-height: 30px;
+    }
+
+    .post-categories {
+        display: flex;
+        gap: 15px
+    }
+
+    .post-category {
+        background-color: var(--theme-01);
+        padding: 10px 15px;
+        color: white;
+    }
+
+    @media (min-width: 1200px) {
+        width: 60%;
+        margin-top: 15px;
+
+        .post-date {
+            font: var(--Heading-7-400);
+        }
+
+        .post-title {
+            font: var(--Heading-3-400);
+        }
     }
 `

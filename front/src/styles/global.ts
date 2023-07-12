@@ -36,9 +36,13 @@ export const Global = createGlobalStyle`
         --Heading-4-400: 400 28px/35px 'Lexend', sans-serif;
         --Heading-5-400: 400 24px/30px 'Lexend', sans-serif;
         --Heading-5-300: 300 24px/30px 'Lexend', sans-serif;
+        --Heading-6-500: 500 20px/25px 'Lexend', sans-serif;
         --Heading-6-400: 400 20px/25px 'Lexend', sans-serif;
         --Heading-6-300: 300 20px/25px 'Lexend', sans-serif;
+        --Heading-7-500: 500 16px/20px 'Lexend', sans-serif;
+        --Heading-7-400: 400 16px/20px 'Lexend', sans-serif;
         --Heading-7-300: 300 16px/20px 'Lexend', sans-serif;
+        --Heading-8-400: 400 12px/16px 'Lexend', sans-serif;
         --Heading-8-300: 300 12px/16px 'Lexend', sans-serif;
         --Heading-9-300: 300 8px/12px 'Lexend', sans-serif;
 
@@ -81,7 +85,7 @@ export const Global = createGlobalStyle`
         height: 100%;
     }
     body {
-        background-color: var(--grey-09);
+        background-color: white;
         min-height: 100%;
         line-height: 1;
         overflow-x: hidden;

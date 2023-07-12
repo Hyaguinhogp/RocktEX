@@ -1,8 +1,8 @@
+import Related from "../Related";
 import { PostComponentContainer, PostComponentContent } from "./styles";
 
 const PostComponent = () => {
     return (
-        <PostComponentContainer>
             <PostComponentContent>
                 <h3 className="post-date">16 jun 2023</h3>
                 <h2 className="post-title">
@@ -21,6 +21,7 @@ const PostComponent = () => {
                     <figure className="post-image"></figure>
                     <h4 className="post-image__description">Imagem ilustrativa, Blue Origin</h4>
                 </div>
+                <Related />
                 <h3 className="post-text">
                     “Estamos procurando tudo o que podemos fazer para adquirir, escalar para atender melhor nossos clientes”, disse Bob Smith, CEO da Blue Origin, em entrevista ao Financial Times. “Não é uma questão de tamanho, mas de quanto isso pode acelerar nosso roteiro do que estamos planejando fazer”, continuou o executivo.
                     Recentemente, a Blue Origin comprou a Honeybee Robotics, uma empresa de desenvolvimento e produção de robôs voltados à exploração planetária, medicina e outras aplicações. A aquisição foi parte de uma iniciativa com investimento de US$ 3,4 bilhões para a construção de um módulo lunar que contribuirá para a missão Artemis da NASA.
@@ -34,7 +35,6 @@ const PostComponent = () => {
                 </div>
 
             </PostComponentContent>
-        </PostComponentContainer>
     )
 }
 
