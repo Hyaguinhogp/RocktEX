@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DefaultContainer, DefaultContent } from "../styles/global";
+import { DefaultContainer, DefaultContent } from "../../styles/global";
 
 export const PostContainer = styled(DefaultContainer)`
     

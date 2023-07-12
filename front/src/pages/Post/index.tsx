@@ -1,7 +1,7 @@
 import Comments from "../../components/Comments";
 import DefaultPageComponent from "../../components/DefaultPageComponent";
 import PostComponent from "../../components/PostComponent";
-import { PostContainer, PostContent } from "../../routes/styles";
+import { PostContainer, PostContent } from "./styles";
 import { DefaultContent } from "../../styles/global";
 
 const Post = () => {
