@@ -1,18 +1,7 @@
 import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
 
-export const MostReadContainer = styled(DefaultContainer)`
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: var(--theme-00);
-
-    @media (min-width: 1200px) {
-        background-color: white;
-        background-color: var(--theme-00);
-    }
-`
-
-export const MostReadContent = styled(DefaultContent)`
+export const MostReadContent = styled.div`
     display: flex;
     flex-direction: column;
     color: white;
@@ -42,8 +31,17 @@ export const MostReadContent = styled(DefaultContent)`
         gap: 20px;
     }
 
+    .read-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        font: var(--Heading-7-300);
+        color: var(--grey-05);
+        text-decoration: underline;
+    }
+
     @media (min-width: 1200px) {
-        padding: 50px;
-        background-color: var(--theme-00);
+        width: 50%;
     }
 `
