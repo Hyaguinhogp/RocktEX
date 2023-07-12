@@ -7,7 +7,8 @@ export const NavbarContainer = styled(DefaultContainer)`
     top: 0;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: var(--theme-04);
+    background-color: var(--theme-01);
+    background-color: var(--theme-00);
 `
 
 export const NavbarContent = styled(DefaultContent)`
@@ -22,8 +23,9 @@ export const NavbarContent = styled(DefaultContent)`
     }
 
     .navbar_logo {
-        font: var(--Heading-5-300);
-        color: white;
+        width: 30px;
+        height: 30px;
+        margin: 0;
     }
     .navbar_logo::after {
         position: relative;
@@ -48,6 +50,11 @@ export const NavbarContent = styled(DefaultContent)`
 
     .desktop_navbar {
         display: none;
+    }
+
+    .selected {
+        color: var(--theme-01);
+        font-weight: 500;
     }
 
     @media (min-width: 1200px) {

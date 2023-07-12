@@ -1,11 +1,19 @@
+import Comments from "../../components/Comments";
 import DefaultPageComponent from "../../components/DefaultPageComponent";
 import PostComponent from "../../components/PostComponent";
+import { PostContainer, PostContent } from "../../routes/styles";
+import { DefaultContent } from "../../styles/global";
 
 const Post = () => {
 
     return(
         <DefaultPageComponent>
-            <PostComponent />
+            <PostContainer>
+                <PostContent>
+                    <PostComponent />
+                    <Comments />
+                </PostContent>
+            </PostContainer>
         </DefaultPageComponent>
     )
 }

@@ -14,7 +14,9 @@ export const HighlightContainer = styled(DefaultContainer)`
     position: relative;
     height: ${({size}: IHighlightContainerProps ) => size == 1 ? "600px" : "292px" };
     padding: 15px;
-
+    overflow: hidden;
+    cursor: pointer;
+    
     ::before {
         content: "";
         position: absolute;
@@ -27,6 +29,14 @@ export const HighlightContainer = styled(DefaultContainer)`
         background-position: 50%;
         filter: brightness(70%);
         z-index: -1;
+        transition: transform .5s;
+    }
+    
+    :hover {
+        ::before {
+            transform: scale(1.2);
+            filter: brightness(80%);
+        }
     }
 
     @media (min-width: 1200px) {

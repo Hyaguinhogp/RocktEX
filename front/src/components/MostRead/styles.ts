@@ -8,6 +8,7 @@ export const MostReadContainer = styled(DefaultContainer)`
 
     @media (min-width: 1200px) {
         background-color: white;
+        background-color: var(--theme-00);
     }
 `
 

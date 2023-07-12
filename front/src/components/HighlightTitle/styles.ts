@@ -5,7 +5,8 @@ export const HighlightTitleContainer = styled(DefaultContainer)`
     align-items: end;
     height: 130px;
     padding-bottom: 15px;
-    background-color: var(--theme-04);
+    background-color: var(--theme-01);
+    background-color: var(--theme-00);
 
     h1 {
         font: var(--Heading-2-400);
