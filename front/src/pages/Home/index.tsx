@@ -4,8 +4,8 @@ import HighlightTitle from "../../components/HighlightTitle";
 import Highlights from "../../components/Highlights";
 import MiniPost from "../../components/MiniPost";
 import MostRead from "../../components/MostRead";
-import { GamesData, HighlightsData, MostReads } from "../../database";
 import MostReadSection from "../../components/MostReadSection";
+import { GamesData, HighlightsData, MostReads } from "../../database";
 
 const Home = () => {
 
