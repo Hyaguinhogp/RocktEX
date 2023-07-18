@@ -9,9 +9,11 @@ import { AuthenticationContainer, AuthenticationContent, MobileTitleContainer } 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import { loadingContext } from "../../contexts/LoadingContext";
+import { toast } from "react-hot-toast";
 
 interface IAuthenticationPageProps {
     type: "register" | "login"
@@ -38,26 +40,38 @@ const AuthenticationPage = ({ type }: IAuthenticationPageProps) => {
 
     const title = type == "register" ? "Cadastro" : "Login";
     const schema = type == "register" ? registerSchema : loginSchema;
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const { activeIsLoading, desactiveIsLoading } = useContext(loadingContext);
 
     const { handleSubmit, register, formState: { errors } } = useForm<FormValues>({
         resolver: yupResolver(schema),
     });
     
     const onSubmit = (data: FormValues) => {
-        console.log(data);
+        activeIsLoading();
         if(type == "register") {
-            api.post("/accounts/", data).then((response) => {
-                console.log(response.data);
-            })
+            api.post("/accounts/", data)
+                .then((response) => {
+                    toast.success("Usuario cadastrado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
+                    desactiveIsLoading();
+                })
+                .catch(() => {
+                    toast.error("Algo deu errado!");
+                    desactiveIsLoading();
+                })
         }
         else {
-            api.post("/login/", data).then((response) => {
-                console.log(response.data);
-            })
+            api.post("/login/", data)
+                .then((response) => {
+                    toast.success("Login efetuado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
+                    desactiveIsLoading();
+                })
+                .catch(() => {
+                    toast.error("Algo deu errado!");
+                    desactiveIsLoading();
+                })
         }
     };
-
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const handlePasswordVisible = () => {
         setIsPasswordVisible(!isPasswordVisible);
