@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom"
 import Home from "../pages/Home"
 import Post from "../pages/Post"
-import Register from "../pages/Register"
 import AuthenticationPage from "../pages/AuthenticationPage"
 const RoutesMain = () => {
     return (

@@ -14,6 +14,7 @@ import { toast } from "react-hot-toast";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { userContext } from "../../contexts/UserContext";
 
 interface IAuthenticationPageProps {
     type: "register" | "login"
@@ -42,6 +43,7 @@ const AuthenticationPage = ({ type }: IAuthenticationPageProps) => {
     const schema = type == "register" ? registerSchema : loginSchema;
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const { activeIsLoading, desactiveIsLoading } = useContext(loadingContext);
+    const { login } = useContext(userContext);
     const navigate = useNavigate();
 
     const { handleSubmit, register, formState: { errors } } = useForm<FormValues>({
@@ -61,18 +63,20 @@ const AuthenticationPage = ({ type }: IAuthenticationPageProps) => {
                     toast.error("Algo deu errado!");
                     desactiveIsLoading();
                 })
-            }
-            else {
-                api.post("/login/", data)
-                .then((response) => {
-                    toast.success("Login efetuado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
-                    desactiveIsLoading();
-                    navigate("/home");
-                })
-                .catch(() => {
-                    toast.error("Algo deu errado!");
-                    desactiveIsLoading();
-                })
+        }
+        else {
+            api.post("/login/", data)
+            .then((response) => {
+                toast.success("Login efetuado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
+                localStorage.setItem("@RTX_token", response.data.access);
+                login();
+                desactiveIsLoading();
+                navigate("/home");
+            })
+            .catch(() => {
+                toast.error("Algo deu errado!");
+                desactiveIsLoading();
+            })
         }
     };
 

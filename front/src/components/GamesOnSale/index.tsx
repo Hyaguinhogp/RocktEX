@@ -14,7 +14,6 @@ const GamesOnSale = ({ Games }: IGamesOnSaleProps) => {
     const [width, setWidth] = useState(0);
 
     useEffect(() => {
-        console.log(carousel.current?.scrollWidth);
         setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth)
     }, [])
 
