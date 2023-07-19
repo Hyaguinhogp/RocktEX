@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { ExampleProvider } from "./ExampleContext"
+import { LoadingProvider } from "./LoadingContext"
 
 interface IProvidersProps {
     children: ReactNode
@@ -7,9 +7,9 @@ interface IProvidersProps {
 
 const Providers = ({ children }: IProvidersProps) => {
     return (
-        <ExampleProvider>
+        <LoadingProvider>
             {children}
-        </ExampleProvider>
+        </LoadingProvider>
     )
 }
 
