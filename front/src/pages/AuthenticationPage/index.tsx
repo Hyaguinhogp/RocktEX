@@ -5,15 +5,15 @@ import { AiFillEyeInvisible } from "react-icons/ai";
 import { AiFillEye } from "react-icons/ai";
 import DefaultPageComponent from "../../components/DefaultPageComponent";
 import { AuthenticationContainer, AuthenticationContent, MobileTitleContainer } from "./styles";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../services/api";
+import { loadingContext } from "../../contexts/LoadingContext";
+import { toast } from "react-hot-toast";
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../services/api";
-import { loadingContext } from "../../contexts/LoadingContext";
-import { toast } from "react-hot-toast";
 
 interface IAuthenticationPageProps {
     type: "register" | "login"
@@ -42,6 +42,7 @@ const AuthenticationPage = ({ type }: IAuthenticationPageProps) => {
     const schema = type == "register" ? registerSchema : loginSchema;
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const { activeIsLoading, desactiveIsLoading } = useContext(loadingContext);
+    const navigate = useNavigate();
 
     const { handleSubmit, register, formState: { errors } } = useForm<FormValues>({
         resolver: yupResolver(schema),
@@ -54,17 +55,19 @@ const AuthenticationPage = ({ type }: IAuthenticationPageProps) => {
                 .then((response) => {
                     toast.success("Usuario cadastrado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
                     desactiveIsLoading();
+                    navigate("/login");
                 })
                 .catch(() => {
                     toast.error("Algo deu errado!");
                     desactiveIsLoading();
                 })
-        }
-        else {
-            api.post("/login/", data)
+            }
+            else {
+                api.post("/login/", data)
                 .then((response) => {
                     toast.success("Login efetuado com sucesso!", { iconTheme: { primary: "#007BFF", secondary: "white" }});
                     desactiveIsLoading();
+                    navigate("/home");
                 })
                 .catch(() => {
                     toast.error("Algo deu errado!");
