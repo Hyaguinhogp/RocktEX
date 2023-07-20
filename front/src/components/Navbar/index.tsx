@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { NavbarContainer, NavbarContent } from "./styles";
 import { CiMenuBurger } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
 import { ImRocket } from "react-icons/im"
 import { useNavigate } from "react-router-dom";
 
@@ -35,9 +35,9 @@ const Navbar = ({ activeDropdown }: INavbarProps) => {
                         <a href="">JOGOS</a>
                     </div>
                     
-                    <div className="search-container">
-                        <input type="text" className="search" placeholder="Pesquisar..." />
+                    <div className="icons-container">
                         <CiSearch />
+                        <CiUser />
                     </div>
                 </div>
             </NavbarContent>

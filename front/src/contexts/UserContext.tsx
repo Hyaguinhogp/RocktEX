@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react"
-import { IUser } from "../interfaces/User"
+import { IUser, IUserPayload } from "../interfaces/User"
 import jwt_decode from "jwt-decode"
+import api from "../services/api"
 
 interface IUserProviderData {
     user: IUser
@@ -18,15 +19,16 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
     const [user, setUser] = useState<IUser>({} as IUser);
 
     const login = () => {
-        console.log("começo");
         const token = localStorage.getItem("@RTX_token");
-        console.log(token);
-        const decodedToken = jwt_decode(token!);
+        const decodedToken: IUserPayload = jwt_decode(token!);
         if(decodedToken) {
-            console.log(decodedToken);
+            const user_id = decodedToken.user_id;
+            api.get(`/accounts/${user_id}/`)
+                .then((response) => {
+                    console.log(response.data);
+                    setUser(response.data);
+                })
         }
-        console.log(decodedToken);
-        console.log("fim");
     }
 
     return (

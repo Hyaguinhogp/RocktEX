@@ -1,14 +1,18 @@
 import { DropdownContainer, DropdownContent } from "./styles"
 import { CiSearch } from "react-icons/ci";
 import { IoIosCloseCircle } from "react-icons/io"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { motion } from "framer-motion"
+import { userContext } from "../../contexts/UserContext";
+import { Link } from "react-router-dom";
 
 interface IDropdownProps {
     desactiveDropdown: () => void
 }
 
 const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
+
+    const { user } = useContext(userContext);
 
     useEffect(() => {
         document.body.classList.add("modal_active");
@@ -42,8 +46,17 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
                         <h3>Mais lidos</h3>
                     </div>
                     <div className="suboptions-container">
-                        <h3>Perfil</h3>
-                        <h3>Sair</h3>
+                        {Object.keys(user).length > 0 ?
+                            <>
+                                <h3>Perfil</h3>
+                                <h3>Sair</h3>
+                            </>
+                            :
+                            <>
+                                <Link to="/register">Cadastre-se</Link>
+                                <Link to="/login">Login</Link>
+                            </>
+                        }
                     </div>
                 </div>
             </DropdownContent>

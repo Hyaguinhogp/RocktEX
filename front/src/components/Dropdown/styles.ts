@@ -79,6 +79,12 @@ export const DropdownContent = styled(motion.div)`
             transition: left 0.3s;
         }
 
+        a {
+            font-style: none;
+            text-decoration: none;
+            color: white;
+        }
+
         h3:hover {
             left: 15px;
         }

@@ -43,7 +43,6 @@ export const NavbarContent = styled(DefaultContent)`
     svg {
         width: 25px;
         height: 25px;
-        margin-left: 20px;
         cursor: pointer;
         color: white;
     }
@@ -95,6 +94,11 @@ export const NavbarContent = styled(DefaultContent)`
                 height: 25px;
                 color: white;
             }
+        }
+
+        .icons-container {
+            display: flex;
+            gap: 20px;
         }
 
         .search {

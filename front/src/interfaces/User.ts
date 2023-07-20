@@ -4,3 +4,7 @@ export interface IUser {
     email: string
     password: string
 }
+
+export interface IUserPayload {
+    user_id: string
+}
