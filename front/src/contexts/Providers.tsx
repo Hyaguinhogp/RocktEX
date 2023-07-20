@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { LoadingProvider } from "./LoadingContext"
+import { ConfirmationModalProvider } from "./ConfirmationModalContext"
 import { UserProvider } from "./UserContext"
 
 interface IProvidersProps {
@@ -9,9 +10,11 @@ interface IProvidersProps {
 const Providers = ({ children }: IProvidersProps) => {
     return (
         <LoadingProvider>
-            <UserProvider>
-                {children}
-            </UserProvider>
+            <ConfirmationModalProvider>
+                <UserProvider>
+                    {children}
+                </UserProvider>
+            </ConfirmationModalProvider>
         </LoadingProvider>
     )
 }

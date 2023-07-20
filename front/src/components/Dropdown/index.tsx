@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react"
 import { motion } from "framer-motion"
 import { userContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
+import { confirmationModalContext } from "../../contexts/ConfirmationModalContext";
 
 interface IDropdownProps {
     desactiveDropdown: () => void
@@ -12,7 +13,14 @@ interface IDropdownProps {
 
 const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
 
-    const { user } = useContext(userContext);
+    const { user, exit } = useContext(userContext);
+    const { createConfirmationModal } = useContext(confirmationModalContext);
+    const exitModalProps = {
+        title: "Sair",
+        text: "Tem certeza que deseja sair?",
+        confirm: "Sair",
+        deny: "voltar"
+    }
 
     useEffect(() => {
         document.body.classList.add("modal_active");
@@ -49,7 +57,7 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
                         {Object.keys(user).length > 0 ?
                             <>
                                 <h3>Perfil</h3>
-                                <h3>Sair</h3>
+                                <h3 onClick={() => createConfirmationModal(exitModalProps, exit)}>Sair</h3>
                             </>
                             :
                             <>

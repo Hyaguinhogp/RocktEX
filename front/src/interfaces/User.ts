@@ -1,3 +1,5 @@
+import { JwtPayload } from "jwt-decode"
+
 export interface IUser {
     id: number
     username: string
@@ -5,6 +7,6 @@ export interface IUser {
     password: string
 }
 
-export interface IUserPayload {
+export interface IUserPayload extends JwtPayload {
     user_id: string
 }
