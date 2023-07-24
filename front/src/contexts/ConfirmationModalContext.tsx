@@ -4,7 +4,6 @@ interface IConfirmationModalData {
     isActive: boolean
     modalInfo: IConfirmationModal
     createConfirmationModal: (modal: IConfirmationModal, confirmFunction: () => void | undefined) => void
-    action: (() => void) | undefined | null
     closeModal: () => void
 }
 
@@ -24,12 +23,12 @@ export const confirmationModalContext = createContext<IConfirmationModalData>({}
 export const ConfirmationModalProvider = ({ children }: IConfirmationModalProps) => {
 
     const [isActive, setIsActive] = useState(false);
-    const [modalInfo, setModalInfo] = useState<IConfirmationModal>({} as IConfirmationModal)
-    const [action, setAction] = useState<(() => void) | undefined | null>();
+    const [modalInfo, setModalInfo] = useState<IConfirmationModal>({} as IConfirmationModal);
+    const [confirmFuncion, setConfirmFunction] = useState<() => void>();
 
-    const createConfirmationModal = (modal: IConfirmationModal, confirmFunction: () => void) => {
+    const createConfirmationModal = (modal: IConfirmationModal, confirmFunction: () => void | undefined) => {
         setModalInfo(modal);
-        setAction(confirmFunction);
+        setConfirmFunction(confirmFunction);
         setIsActive(true);
     }
 
@@ -37,8 +36,13 @@ export const ConfirmationModalProvider = ({ children }: IConfirmationModalProps)
         setIsActive(false);
     }
 
+    const confirmAction = () => {
+        confirmFuncion!();
+        closeModal();
+    }
+
     return (
-        <confirmationModalContext.Provider value={{ isActive, modalInfo, createConfirmationModal, action, closeModal }}>
+        <confirmationModalContext.Provider value={{ isActive, modalInfo, createConfirmationModal, closeModal }}>
             {children}
         </confirmationModalContext.Provider>
     )

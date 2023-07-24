@@ -4,12 +4,15 @@ import { CiSearch } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { ImRocket } from "react-icons/im"
 import { useNavigate } from "react-router-dom";
+import DesktopDropdown from "../DesktopDropdown";
+import { useState } from "react";
 
 interface INavbarProps {
     activeDropdown: () => void
+    activeDesktopDropdown: () => void
 }
 
-const Navbar = ({ activeDropdown }: INavbarProps) => {
+const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
 
     const navigate = useNavigate();
 
@@ -29,10 +32,10 @@ const Navbar = ({ activeDropdown }: INavbarProps) => {
                         <ImRocket className="navbar_logo" onClick={() => navigate("/home")} />
                     </div>
 
-                    <div className="mid_navbar">
-                        <a className="selected" href="">HOME</a>
-                        <a href="">TECNOLOGIA</a>
-                        <a href="">JOGOS</a>
+                    <div className="mid_navbar" onMouseOver={() => activeDesktopDropdown()}>
+                        <h3 className="selected">NOTICIAS</h3>
+                        <h3>TECNOLOGIA</h3>
+                        <h3>JOGOS</h3>
                     </div>
                     
                     <div className="icons-container">

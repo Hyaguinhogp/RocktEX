@@ -3,16 +3,18 @@ import { DefaultContainer, DefaultContent } from "../../styles/global";
 
 export const NavbarContainer = styled(DefaultContainer)`
     position: fixed;
+    flex-direction: column;
     z-index: 5;
     top: 0;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: var(--theme-01);
-    background-color: var(--theme-00);
+    background-color: #1D1F21F0;
+    backdrop-filter: blur(15px);
 `
 
 export const NavbarContent = styled(DefaultContent)`
     display: flex;
+    color: white;
 
     .mobile_navbar {
         display: flex;
@@ -29,7 +31,7 @@ export const NavbarContent = styled(DefaultContent)`
     }
     .navbar_logo::after {
         position: relative;
-        content: "X";
+        content: "";
         right: 17px;
         color: var(--theme-01);
         z-index: -1;

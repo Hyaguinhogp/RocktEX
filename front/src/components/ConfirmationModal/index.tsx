@@ -6,11 +6,9 @@ import { confirmationModalContext } from "../../contexts/ConfirmationModalContex
 
 const ConfirmationModal = () => {
 
-    const { modalInfo, action, closeModal } = useContext(confirmationModalContext);
+    const { modalInfo, closeModal } = useContext(confirmationModalContext);
     const { title, text, confirm, deny } = {...modalInfo};
     const handleConfirm = () => {
-        console.log("opa");
-        action!();
         closeModal();
     }
 
@@ -22,7 +20,7 @@ const ConfirmationModal = () => {
                     <GrFormClose onClick={() => closeModal()} />
                 </div>
 
-                <h3 className="modal-text">{text ? title : "Tem certeza dessa ação?"}</h3>
+                <h3 className="modal-text">{text ? text : "Tem certeza dessa ação?"}</h3>
 
                 <div className="modal-bottom-container">
                     <button className="deny" onClick={() => closeModal()}>{deny ? deny : "voltar"}</button>

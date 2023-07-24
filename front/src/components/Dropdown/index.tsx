@@ -1,7 +1,7 @@
 import { DropdownContainer, DropdownContent } from "./styles"
 import { CiSearch } from "react-icons/ci";
 import { IoIosCloseCircle } from "react-icons/io"
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { userContext } from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
@@ -15,6 +15,7 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
 
     const { user, exit } = useContext(userContext);
     const { createConfirmationModal } = useContext(confirmationModalContext);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const exitModalProps = {
         title: "Sair",
         text: "Tem certeza que deseja sair?",
@@ -25,14 +26,37 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
     useEffect(() => {
         document.body.classList.add("modal_active");
 
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                desactiveDropdown();
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+
         return () => {
             document.body.classList.remove("modal_active");
+            document.removeEventListener("mousedown", handleClickOutside);
         }
     }, []);
 
+    const animations = {
+        initial: {
+            x: "200px"
+        },
+        animate: {
+            x: "0px"
+        },
+        exit: {
+            x: "100%"
+        },
+        transition: {
+            duration: 0.3
+        }
+    }
+
     return (
         <DropdownContainer>
-            <DropdownContent initial={{ x: "200px" }} animate={{ x: "0px" }} exit={{ x: "100%" }} transition={{ duration: 0.3 }}>
+            <DropdownContent ref={dropdownRef} {...animations}>
                 <div className="close-container">
                     <IoIosCloseCircle className="close-button" onClick={() => desactiveDropdown()} />
                 </div>
