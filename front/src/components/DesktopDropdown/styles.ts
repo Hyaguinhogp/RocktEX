@@ -17,16 +17,31 @@ export const DesktopDropdownContainer = styled(motion.div)`
 
 export const DesktopDropdownContent = styled(motion.div)`
     display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 1200px;
     padding-top: 20px;
     padding-bottom: 20px;
-    gap: 15px;
+    gap: 5vw;
     color: white;
 
-    h3 {
+    .desktop-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .title {
+        font: var(--Heading-6-300);
         color: white;
+    }
+
+    h3 {
         font: var(--Heading-7-300);
+        color: var(--grey-05);
+        cursor: pointer;
+    }
+
+    h3:hover {
+        color: white;
     }
 `

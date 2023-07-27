@@ -7,9 +7,11 @@ import { useNavigate } from "react-router-dom";
 import DesktopDropdown from "../DesktopDropdown";
 import { useState } from "react";
 
+export type TDesktopDropdown = "notice" | "tech" | "games";
+
 interface INavbarProps {
     activeDropdown: () => void
-    activeDesktopDropdown: () => void
+    activeDesktopDropdown: (type: TDesktopDropdown) => void
 }
 
 const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
@@ -32,10 +34,10 @@ const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
                         <ImRocket className="navbar_logo" onClick={() => navigate("/home")} />
                     </div>
 
-                    <div className="mid_navbar" onMouseOver={() => activeDesktopDropdown()}>
-                        <h3 className="selected">NOTICIAS</h3>
-                        <h3>TECNOLOGIA</h3>
-                        <h3>JOGOS</h3>
+                    <div className="mid_navbar">
+                        <h3 onMouseOver={() => activeDesktopDropdown("notice")}>NOTICIAS</h3>
+                        <h3 onMouseOver={() => activeDesktopDropdown("tech")}>TECNOLOGIA</h3>
+                        <h3 onMouseOver={() => activeDesktopDropdown("games")}>JOGOS</h3>
                     </div>
                     
                     <div className="icons-container">

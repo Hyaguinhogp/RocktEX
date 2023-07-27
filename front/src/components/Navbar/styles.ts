@@ -53,9 +53,8 @@ export const NavbarContent = styled(DefaultContent)`
         display: none;
     }
 
-    .selected {
+    h3:hover {
         color: var(--theme-01);
-        font-weight: 500;
     }
 
     @media (min-width: 1200px) {

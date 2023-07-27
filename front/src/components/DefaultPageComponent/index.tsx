@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import { DefaultPage } from "../../styles/global";
 import { AnimatePresence } from "framer-motion";
 import Dropdown from "../Dropdown";
-import Navbar from "../Navbar";
+import Navbar, { TDesktopDropdown } from "../Navbar";
 import { FalseNavbar } from "./styles";
 import DesktopDropdown from "../DesktopDropdown";
 
@@ -14,17 +14,19 @@ const DefaultPageComponent = ( { children }: IDefaultPageComponent ) => {
 
     const [isDropdownActive, setIsDropdownActive] = useState(false);
     const [isDesktopDropdownActive, setIsDesktopDropdownActive] = useState(false);
+    const [typeDesktopDropdown, setTypeDesktopDropdown] = useState<TDesktopDropdown>("notice")
 
     const activeDropdown = () => {
         setIsDropdownActive(true);
     }
-
+    
     const desactiveDropdown = () => {
         setIsDropdownActive(false);
     }
-
-    const activeDesktopDropdown = () => {
+    
+    const activeDesktopDropdown = (type: TDesktopDropdown) => {
         setIsDesktopDropdownActive(true);
+        setTypeDesktopDropdown(type);
     }
 
     const desactiveDesktopDropdown = () => {
@@ -39,7 +41,7 @@ const DefaultPageComponent = ( { children }: IDefaultPageComponent ) => {
             <FalseNavbar />
             <Navbar activeDropdown={activeDropdown} activeDesktopDropdown={activeDesktopDropdown} />
             <AnimatePresence>
-                {isDesktopDropdownActive && <DesktopDropdown desactiveDesktopDropdown={desactiveDesktopDropdown} />}
+                {isDesktopDropdownActive && <DesktopDropdown desactiveDesktopDropdown={desactiveDesktopDropdown} type={typeDesktopDropdown} />}
             </AnimatePresence>
             {children}
         </DefaultPage>
