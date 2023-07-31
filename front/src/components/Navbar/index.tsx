@@ -1,15 +1,20 @@
-import { useState } from "react";
 import { NavbarContainer, NavbarContent } from "./styles";
 import { CiMenuBurger } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
 import { ImRocket } from "react-icons/im"
 import { useNavigate } from "react-router-dom";
+import DesktopDropdown from "../DesktopDropdown";
+import { useState } from "react";
+
+export type TDesktopDropdown = "notice" | "tech" | "games" | "search";
 
 interface INavbarProps {
     activeDropdown: () => void
+    activeDesktopDropdown: (type: TDesktopDropdown) => void
 }
 
-const Navbar = ({ activeDropdown }: INavbarProps) => {
+const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
 
     const navigate = useNavigate();
 
@@ -30,14 +35,14 @@ const Navbar = ({ activeDropdown }: INavbarProps) => {
                     </div>
 
                     <div className="mid_navbar">
-                        <a className="selected" href="">HOME</a>
-                        <a href="">TECNOLOGIA</a>
-                        <a href="">JOGOS</a>
+                        <h3 onMouseOver={() => activeDesktopDropdown("notice")}>NOTICIAS</h3>
+                        <h3 onMouseOver={() => activeDesktopDropdown("tech")}>TECNOLOGIA</h3>
+                        <h3 onMouseOver={() => activeDesktopDropdown("games")}>JOGOS</h3>
                     </div>
                     
-                    <div className="search-container">
-                        <input type="text" className="search" placeholder="Pesquisar..." />
-                        <CiSearch />
+                    <div className="icons-container">
+                        <CiSearch onMouseOver={() => activeDesktopDropdown("search")}/>
+                        <CiUser />
                     </div>
                 </div>
             </NavbarContent>
