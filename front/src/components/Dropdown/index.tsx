@@ -1,11 +1,10 @@
-import { DropdownContainer, DropdownContent } from "./styles"
-import { CiSearch } from "react-icons/ci";
-import { IoIosCloseCircle } from "react-icons/io"
-import { useContext, useEffect, useRef } from "react"
-import { motion } from "framer-motion"
-import { userContext } from "../../contexts/UserContext";
+import { useContext, useEffect, useRef } from "react";
+import { IoIosCloseCircle } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { confirmationModalContext } from "../../contexts/ConfirmationModalContext";
+import { userContext } from "../../contexts/UserContext";
+import Search from "../Search";
+import { DropdownContainer, DropdownContent } from "./styles";
 
 interface IDropdownProps {
     desactiveDropdown: () => void
@@ -58,14 +57,9 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
         <DropdownContainer>
             <DropdownContent ref={dropdownRef} {...animations}>
                 <div className="close-container">
-                    <IoIosCloseCircle className="close-button" onClick={() => desactiveDropdown()} />
+                    <IoIosCloseCircle className="close-button" onClick={() => desactiveDropdown()}/>
                 </div>
-                <div className="search-container">
-                    <input type="text" className="search" placeholder="Pesquisar..." />
-                    <button className="search-button">
-                        <CiSearch />
-                    </button>
-                </div>
+                <Search isMobile/>
                 <div className="options-container">
                     <div className="suboptions-container suboptions-line">
                         <h3 className="selected">Home</h3>

@@ -1,4 +1,5 @@
 import { TDesktopDropdown } from "../Navbar";
+import Search from "../Search";
 import { DesktopDropdownContainer, DesktopDropdownContent } from "./styles";
 
 interface IDesktopDropdownProps {
@@ -93,6 +94,10 @@ const DesktopDropdown = ({ desactiveDesktopDropdown, type }: IDesktopDropdownPro
                         <h3>Gigabyte</h3>
                     </div>
                 </>}
+
+                {type == "search" && <div className="desktop-search">
+                        <Search isMobile={false} />
+                    </div>}
             </DesktopDropdownContent>
         </DesktopDropdownContainer>
     )

@@ -44,4 +44,11 @@ export const DesktopDropdownContent = styled(motion.div)`
     h3:hover {
         color: white;
     }
+
+    .desktop-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 `

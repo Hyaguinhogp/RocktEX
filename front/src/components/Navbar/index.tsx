@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import DesktopDropdown from "../DesktopDropdown";
 import { useState } from "react";
 
-export type TDesktopDropdown = "notice" | "tech" | "games";
+export type TDesktopDropdown = "notice" | "tech" | "games" | "search";
 
 interface INavbarProps {
     activeDropdown: () => void
@@ -41,7 +41,7 @@ const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
                     </div>
                     
                     <div className="icons-container">
-                        <CiSearch />
+                        <CiSearch onMouseOver={() => activeDesktopDropdown("search")}/>
                         <CiUser />
                     </div>
                 </div>
