@@ -1,10 +1,12 @@
 import { IMostRead } from "../../interfaces/MostReads";
+import { IPostCardData } from "../../interfaces/Post";
+import PostCard from "../PostCard";
 import { MostReadCardContainer } from "./styles";
 
 interface IMostReadCardProps {
     position: number
     size: "130px" | "100px"
-    data: IMostRead
+    data: IPostCardData
 }
 
 const MostReadCard = ({ position, size, data}: IMostReadCardProps) => {
@@ -12,13 +14,15 @@ const MostReadCard = ({ position, size, data}: IMostReadCardProps) => {
         <MostReadCardContainer size={size} url_image={data.url_image}>
             <div className="mrc__image-container">
                 <span className="rank">#{position}</span>
-                <figure></figure>
+                {/* <figure></figure> */}
             </div>
 
-            <div className="mrc__info">
+            {/* <div className="mrc__info">
                 <h2>{data.title}</h2>
                 <span className="category">{data.category}</span>
-            </div>
+            </div> */}
+
+            <PostCard postData={data} />
         </MostReadCardContainer>
     )
 }

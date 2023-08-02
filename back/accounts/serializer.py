@@ -5,4 +5,5 @@ from django.contrib.auth.hashers import make_password
 class AccountsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ['id', 'username', 'email', 'password']
+        fields = ['id', 'username', 'email', 'password', 'social_media']
+        depth = 1

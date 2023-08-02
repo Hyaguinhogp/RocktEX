@@ -1,5 +1,9 @@
-import { styled } from "goober";
+import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
+
+interface IProfileBottomContentProps {
+    minHeight: number
+}
 
 export const ProfileContainer = styled(DefaultContainer)`
     flex-direction: column;
@@ -7,9 +11,11 @@ export const ProfileContainer = styled(DefaultContainer)`
     color: white;
 `
 
-export const ProfileTopContent = styled(DefaultContent)`
+export const ProfileTopContent = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
 
     .profile-info {
         display: flex;
@@ -34,6 +40,7 @@ export const ProfileTopContent = styled(DefaultContent)`
 
     .profile-name {
         font: var(--Heading-5-300);
+        color: var(--theme-01);
         margin-bottom: 10px;
     }
     
@@ -88,7 +95,7 @@ export const ProfileTopContent = styled(DefaultContent)`
 
     @media (min-width: 1200px) {
         flex-direction: row;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
 
         .profile-info {
             width: 50%;
@@ -132,7 +139,7 @@ export const ProfileTopContent = styled(DefaultContent)`
 
         .selected {
             font: var(--Heading-3-300);
-            color: white;
+            color: var(--theme-01);
         }
 
         .selected::after {
@@ -143,7 +150,7 @@ export const ProfileTopContent = styled(DefaultContent)`
 
 export const ProfileBottomContent = styled(DefaultContent)`
     display: flex;
-    min-height: 100vh;
+    min-height: ${({ minHeight }: IProfileBottomContentProps) => minHeight}px;
 
     .profile-posts {
         display: flex;

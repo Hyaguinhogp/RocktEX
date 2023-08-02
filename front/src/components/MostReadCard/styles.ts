@@ -8,7 +8,7 @@ interface IMostReadCardContainerProps {
 
 export const MostReadCardContainer = styled.div`
     display: flex;
-    align-items: start;
+    align-items: center;
     border-bottom: 1px solid var(--grey-02);
     padding-bottom: 20px;
 
@@ -51,7 +51,7 @@ export const MostReadCardContainer = styled.div`
         padding: 2px 10px;
         margin-top: 10px;
         background-color: var(--theme-04);
-        font: var(--Heading-7-300)
+        font: var(--Heading-7-300);
     }
 `
 

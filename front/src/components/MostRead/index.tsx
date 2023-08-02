@@ -1,9 +1,10 @@
 import { IMostRead } from "../../interfaces/MostReads";
+import { IPostCardData } from "../../interfaces/Post";
 import MostReadCard from "../MostReadCard";
 import { MostReadContent } from "./styles";
 
 interface IMostReadProps {
-    most_reads: IMostRead[]
+    most_reads: IPostCardData[]
 }
 
 const MostRead = ({ most_reads }: IMostReadProps) => {

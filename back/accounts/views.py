@@ -8,7 +8,6 @@ class AccountsView(ListCreateAPIView):
     serializer_class = AccountsSerializer
 
     def perform_create(self, serializer):
-        print(serializer.validated_data)
         password = make_password(serializer.validated_data['password'])
         serializer.save(password=password)
 
