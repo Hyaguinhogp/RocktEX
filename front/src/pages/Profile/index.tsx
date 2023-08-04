@@ -9,12 +9,13 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { PostsCardData } from "../../database";
 import { userContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineAddCircle } from "react-icons/md"
 
 const Profile = () => {
 
     const ProfileTopContentRef = useRef<HTMLDivElement>(null);
     const [ProfileBottomContentMinHeight, setProfileBottomContentMinHeight] = useState(0);
-    const { checkToken } = useContext(userContext);
+    const { checkToken, user } = useContext(userContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,18 +32,20 @@ const Profile = () => {
                     <div className="profile-info">
                         <div className="profile-image"></div>
                         <div className="profile-text">
-                            <h2 className="profile-name">Marco Aurélio</h2>
-                            <h3 className="profile-description">
-                                Marco Aurélio foi o imperador romano de 161 até sua morte. Era filho de Domícia Lucila e do pretor Marco Ânio Vero,
-                                sobrinho do imperador Adriano.
-                            </h3>
+                            <h2 className="profile-name">{user.username ? user.username : "Marco Aurélio"}</h2>
+                            {/* <h3 className="profile-description">{user.biography}</h3> */}
+                            <textarea className="biography-input" placeholder="Adicione uma biografia"></textarea>
                         </div>
                         <BiEdit className="profile-edit-button" />
                     </div>
                     <div className="profile-social">
-                        <Linkedin />
-                        <Instagram />
-                        <Twitter />
+                        {user.social_media.map((social_media) => {
+                            if(social_media.social_media_type == "linkedin") return <a href={`https://www.linkedin.com/in/${user.social_media}/`}><Linkedin /></a>
+                            if(social_media.social_media_type == "instagram") return <a href={`https://www.instagram.com/${user.social_media}/`}><Instagram /></a>
+                            if(social_media.social_media_type == "twitter") return <a href={`https://twitter.com/${user.social_media}`}><Twitter /></a>
+                        })}
+                        <MdOutlineAddCircle />
+
                     </div>
                     <div className="profile-options">
                         <h3 className="profile-option selected">Posts</h3>

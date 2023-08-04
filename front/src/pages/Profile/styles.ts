@@ -54,6 +54,28 @@ export const ProfileTopContent = styled.div`
         height: 20px;
     }
 
+    .biography-input {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        background-color: var(--grey-02);
+        border-radius: 4px;
+        border: none;
+        padding: 10px;
+        resize: none;
+        font: var(--Heading-7-300);
+        color: white;
+    }
+
+    .biography-input:focus {
+        outline: none;
+    }
+
+    .biography-input::placeholder {
+        font: var(--Heading-7-300);
+        color: var(--grey-05);
+    }
+
     .profile-social {
         display: flex;
         justify-content: center;
