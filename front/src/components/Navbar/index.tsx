@@ -1,11 +1,7 @@
-import { NavbarContainer, NavbarContent } from "./styles";
-import { CiMenuBurger } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
-import { ImRocket } from "react-icons/im"
+import { CiMenuBurger, CiSearch, CiUser } from "react-icons/ci";
+import { ImRocket } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
-import DesktopDropdown from "../DesktopDropdown";
-import { useState } from "react";
+import { NavbarContainer, NavbarContent } from "./styles";
 
 export type TDesktopDropdown = "notice" | "tech" | "games" | "search";
 
@@ -42,7 +38,7 @@ const Navbar = ({ activeDropdown, activeDesktopDropdown }: INavbarProps) => {
                     
                     <div className="icons-container">
                         <CiSearch onMouseOver={() => activeDesktopDropdown("search")}/>
-                        <CiUser />
+                        <CiUser onClick={() => navigate("/profile")} />
                     </div>
                 </div>
             </NavbarContent>

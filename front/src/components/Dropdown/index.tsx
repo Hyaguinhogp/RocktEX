@@ -81,6 +81,7 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
                             <>
                                 <Link to="/register">Cadastre-se</Link>
                                 <Link to="/login">Login</Link>
+                                <Link to="/profile">Perfil</Link>
                             </>
                         }
                     </div>

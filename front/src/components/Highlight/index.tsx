@@ -16,12 +16,11 @@ const Highlight = ({size, highlight}:IHighlightProps) => {
                 </div>
                 <div className="highlight_bottom_container">
                     <HighlightTitle>
-                        <div></div>
-                        <h2 className="highlight_title">{formatTextSize(highlight.title, size == 2 ? 30 : 60)}</h2>
+                        <div className="blue-detail"></div>
+                        <h2 className="highlight_title">{highlight.title}</h2>
                     </HighlightTitle>
-                    <h3 className="highlight_description">
-                        {formatTextSize(highlight.description, size == 2 ? 30 : 60)}
-                    </h3>
+
+                    <h3 className="author">Por <span className="author-name">Marco Aurélio</span></h3>
                 </div>
             </HighlightContent>
         </HighlightContainer>
