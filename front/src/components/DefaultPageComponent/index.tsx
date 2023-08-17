@@ -38,7 +38,6 @@ const DefaultPageComponent = ( { children }: IDefaultPageComponent ) => {
             <AnimatePresence>   
                 {isDropdownActive && <Dropdown desactiveDropdown={desactiveDropdown} />}
             </AnimatePresence>
-            <FalseNavbar />
             <Navbar activeDropdown={activeDropdown} activeDesktopDropdown={activeDesktopDropdown} />
             <AnimatePresence>
                 {isDesktopDropdownActive && <DesktopDropdown desactiveDesktopDropdown={desactiveDesktopDropdown} type={typeDesktopDropdown} />}

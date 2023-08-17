@@ -135,4 +135,5 @@ export const DefaultContent = styled.div`
 export const DefaultPage = styled.div`
     display: flex;
     flex-direction: column;
+    padding-top: 62px;
 `

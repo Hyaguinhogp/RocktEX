@@ -14,13 +14,7 @@ const MostReadCard = ({ position, size, data}: IMostReadCardProps) => {
         <MostReadCardContainer size={size} url_image={data.url_image}>
             <div className="mrc__image-container">
                 <span className="rank">#{position}</span>
-                {/* <figure></figure> */}
             </div>
-
-            {/* <div className="mrc__info">
-                <h2>{data.title}</h2>
-                <span className="category">{data.category}</span>
-            </div> */}
 
             <PostCard postData={data} />
         </MostReadCardContainer>

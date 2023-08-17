@@ -7,20 +7,20 @@ interface IGameCardContainerProps {
 export const GameCardContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 200px;
 
     .game__image {
         display: flex;
         width: 100%;
-        height: 400px;
+        height: 300px;
         background: url(${({url_image}: IGameCardContainerProps) => url_image});
         background-position: 50%;
         background-size: cover;
     }
 
     .game__title {
-        font: var(--Heading-5-400);
-        margin: 8px 0 8px 0;
+        font: var(--Heading-6-400);
+        margin-top: 8px;
     }
 
     .game__price-container {
@@ -34,48 +34,49 @@ export const GameCardContainer = styled.div`
         border-radius: 5px;
         background-color: var(--theme-01);
         color: white;
-        font: var(--Heading-6-300)
+        font: var(--Heading-7-300)
     }
 
     .prices {
         display: flex;
-        align-items: end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .normal-price {
         position: relative;
-        top: -4px;
         color: var(--grey-03);
-        font: var(--Heading-7-300);
+        font: var(--Heading-8-300);
         text-decoration: line-through;
     }
 
     .actual-price {
-        font: var(--Heading-4-400)
+        font: var(--Heading-6-400)
     }
 
     @media (min-width: 1200px) {
-        width: 400px;
+        width: 300px;
 
         .game__image {
-            height: 500px;
+            height: 400px;
         }
 
         .game__title {
-            font: var(--Heading-4-400);
+            font: var(--Heading-5-400);
             margin: 8px 0 8px 0;
         }
 
         .discount-percent {
-            font: var(--Heading-5-300)
+            font: var(--Heading-6-300)
         }
 
         .normal-price {
-            font: var(--Heading-6-300);
+            font: var(--Heading-7-300);
         }
 
         .actual-price {
-            font: var(--Heading-3-400)
+            font: var(--Heading-5-400)
         }
     }
 `
