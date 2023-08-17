@@ -16,11 +16,14 @@ export const GameCardContainer = styled.div`
         background: url(${({url_image}: IGameCardContainerProps) => url_image});
         background-position: 50%;
         background-size: cover;
+        cursor: pointer;
     }
 
     .game__title {
         font: var(--Heading-6-400);
         margin-top: 8px;
+        cursor: pointer;
+        width: fit-content;
     }
 
     .game__price-container {

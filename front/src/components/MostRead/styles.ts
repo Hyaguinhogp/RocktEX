@@ -43,5 +43,11 @@ export const MostReadContent = styled.div`
 
     @media (min-width: 1200px) {
         width: 50%;
+
+        .most-read__title-container {
+        h2 {
+            font-size: 30px;
+        }
+    }
     }
 `

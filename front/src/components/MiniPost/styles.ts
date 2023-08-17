@@ -20,6 +20,7 @@ export const MiniPostContent = styled.div`
         font: var(--Heading-3-500);
         font-family: 'Oswald', sans-serif;
         line-height: 35px;
+        text-shadow: 0 0 3px var(--theme-00);
     }
     
     .blue {
