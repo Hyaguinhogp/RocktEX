@@ -10,7 +10,7 @@ interface IHighlightProps {
 const Highlight = ({size, highlight}:IHighlightProps) => {
     return (
         <HighlightContainer size={size} image_url={highlight.image_url}>
-            <HighlightContent size={size}>
+            <HighlightContent>
                 <div className="highlight_top_container">
                     <h3>{highlight.date}</h3>
                 </div>

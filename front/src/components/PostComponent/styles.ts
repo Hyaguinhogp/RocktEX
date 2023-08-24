@@ -80,5 +80,9 @@ export const PostComponentContent = styled.div`
         .post-title {
             font: var(--Heading-3-400);
         }
+
+        .post-image {
+            height: 500px;
+        }
     }
 `

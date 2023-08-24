@@ -6,11 +6,12 @@ import Navbar, { TDesktopDropdown } from "../Navbar";
 import { FalseNavbar } from "./styles";
 import DesktopDropdown from "../DesktopDropdown";
 
-interface IDefaultPageComponent {
+interface IDefaultPageComponentProps {
     children: ReactNode
+    falseNavbar?: boolean
 }
 
-const DefaultPageComponent = ( { children }: IDefaultPageComponent ) => {
+const DefaultPageComponent = ( { children, falseNavbar=false }: IDefaultPageComponentProps ) => {
 
     const [isDropdownActive, setIsDropdownActive] = useState(false);
     const [isDesktopDropdownActive, setIsDesktopDropdownActive] = useState(false);
@@ -38,7 +39,7 @@ const DefaultPageComponent = ( { children }: IDefaultPageComponent ) => {
             <AnimatePresence>   
                 {isDropdownActive && <Dropdown desactiveDropdown={desactiveDropdown} />}
             </AnimatePresence>
-            <FalseNavbar />
+            <FalseNavbar style={{backgroundColor: falseNavbar ? "var(--theme-00)" : "white"}} />
             <Navbar activeDropdown={activeDropdown} activeDesktopDropdown={activeDesktopDropdown} />
             <AnimatePresence>
                 {isDesktopDropdownActive && <DesktopDropdown desactiveDesktopDropdown={desactiveDesktopDropdown} type={typeDesktopDropdown} />}

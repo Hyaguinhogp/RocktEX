@@ -26,25 +26,29 @@ const Profile = () => {
     }, [])
 
     return (
-        <DefaultPageComponent>
+        <DefaultPageComponent falseNavbar>
             <ProfileContainer>
                 <ProfileTopContent ref={ProfileTopContentRef}>
                     <div className="profile-info">
                         <div className="profile-image"></div>
                         <div className="profile-text">
                             <h2 className="profile-name">{user.username ? user.username : "Marco Aurélio"}</h2>
-                            {/* <h3 className="profile-description">{user.biography}</h3> */}
-                            <textarea className="biography-input" placeholder="Adicione uma biografia"></textarea>
+                            {user.biography ? 
+                                <h3 className="profile-description">{user.biography}</h3> 
+                                :
+                                <textarea className="biography-input" placeholder="Adicione uma biografia"></textarea>}
                         </div>
                         <BiEdit className="profile-edit-button" />
                     </div>
                     <div className="profile-social">
-                        {user.social_media.map((social_media) => {
+                        {user.social_media?.map((social_media) => {
                             if(social_media.social_media_type == "linkedin") return <a href={`https://www.linkedin.com/in/${user.social_media}/`}><Linkedin /></a>
                             if(social_media.social_media_type == "instagram") return <a href={`https://www.instagram.com/${user.social_media}/`}><Instagram /></a>
                             if(social_media.social_media_type == "twitter") return <a href={`https://twitter.com/${user.social_media}`}><Twitter /></a>
                         })}
-                        <MdOutlineAddCircle />
+                        <div>
+                            <MdOutlineAddCircle />
+                        </div>
 
                     </div>
                     <div className="profile-options">

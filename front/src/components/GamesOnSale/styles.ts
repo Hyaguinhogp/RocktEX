@@ -32,17 +32,12 @@ export const GamesOnSaleContent = styled(DefaultContent)`
 
     .carousel {
         display: flex;
-        gap: 20px;
+        gap: 16px;
     }
 
     @media (min-width: 1200px) {
-        .blue-circle {
-            width: 15px;
-            height: 15px;
-        }
-
         .gos_title {
-            font: var(--Heading-4-400);
+            font: var(--Heading-5-400);
         }
     }
 `

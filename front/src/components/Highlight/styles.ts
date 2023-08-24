@@ -15,7 +15,6 @@ export const HighlightContainer = styled(DefaultContainer)`
     height: ${({ size }: IHighlightContainerProps) => size == 1 ? "600px" : "292px"};
     padding: 15px;
     overflow: hidden;
-    cursor: pointer;
     
     ::before {
         content: "";
@@ -34,7 +33,7 @@ export const HighlightContainer = styled(DefaultContainer)`
     
     :hover {
         ::before {
-            transform: scale(1.2);
+            transform: scale(1.1);
             filter: brightness(80%);
         }
     }
@@ -55,8 +54,9 @@ export const HighlightContent = styled(DefaultContent)`
     .highlight_top_container {
         display: flex;
         justify-content: end;
-        color: var(--grey-03);
-        font-size: 10px;
+        color: var(--grey-05);
+        font: var(--Heading-8-300);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         margin-bottom: 20px;
     }
 
@@ -69,7 +69,7 @@ export const HighlightContent = styled(DefaultContent)`
 
     h2 {
         color: white;
-        font: ${({ size }: IHighlightContentProps) => size == 1 ? "var(--Heading-3-400)" : "var(--Heading-6-400)"};
+        font: var(--Heading-6-400);
         font-family: 'Oswald', sans-serif;
     }
 
@@ -79,20 +79,18 @@ export const HighlightContent = styled(DefaultContent)`
         align-items: end;
         margin-top: 5px;
         color: var(--grey-05);
-        font: var(--Heading-8-300);
+        font: var(--Heading-7-300);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
 
     .author-name {
         color: white;
         font: var(--Heading-7-400);
         margin-left: 3px;
+        cursor: pointer;
     }
 
     @media (min-width: 1200px) {
-        .highlight_top_container {
-            font: var(--Heading-7-300);
-        }
-
         .highlight_bottom_container {
             .author {
                 margin-top: 10px;
@@ -100,13 +98,13 @@ export const HighlightContent = styled(DefaultContent)`
             }
 
             .author-name {
-                font: var(--Heading-6-300);
+                font: var(--Heading-7-300);
                 margin-left: 3px;
             }
         }
 
         h2 {
-            font: ${({ size }: IHighlightContentProps) => size == 1 ? "var(--Heading-1-400)" : "var(--Heading-3-400)"};
+            font: var(--Heading-3-400);
             font-family: 'Oswald', sans-serif;
         }
     }
@@ -115,16 +113,22 @@ export const HighlightContent = styled(DefaultContent)`
 export const HighlightTitle = styled.div`
     display: flex;
     margin-bottom: 10px;
+    cursor: pointer;
 
     .blue-detail {
         display: flex;
         content: "";
         width: 5px;
         margin-right: 10px;
+        border-radius: 2px;
         background-color: var(--theme-01);
     }
 
-    h2 {
+    .highlight_title {
         width: 90%;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .highlight_title:hover {
     }
 `

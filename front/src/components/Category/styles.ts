@@ -13,6 +13,6 @@ export const CategoryContainer = styled.div`
 
     @media (min-width: 1200px) {
         padding: 3px 15px;
-        font: var(--Heading-6-300);
+        font: var(--Heading-7-300);
     }
 `

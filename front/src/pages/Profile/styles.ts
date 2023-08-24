@@ -19,13 +19,16 @@ export const ProfileTopContent = styled.div`
 
     .profile-info {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: space-between;
         padding: 20px 0px;
+        gap:10px;
     }
 
     .profile-image {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/55/Metropolitan_Marcus_Aurelius_Roman_2C_AD_%28cropped%29.jpg);
         background-position: center;
@@ -35,18 +38,20 @@ export const ProfileTopContent = styled.div`
     .profile-text {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 70%;
     }
 
     .profile-name {
-        font: var(--Heading-5-300);
+        font: var(--Heading-6-400);
         color: var(--theme-01);
         margin-bottom: 10px;
     }
     
     .profile-description {
         font: var(--Heading-7-300);
-        color: var(--grey-07);
+        color: var(--grey-06);
+        text-align: center;
     }
 
     .profile-edit-button {
@@ -58,10 +63,10 @@ export const ProfileTopContent = styled.div`
         display: flex;
         width: 100%;
         height: 100px;
-        background-color: var(--grey-02);
+        background-color: var(--grey-01);
         border-radius: 4px;
         border: none;
-        padding: 10px;
+        padding: 10px 20px;
         resize: none;
         font: var(--Heading-7-300);
         color: white;
@@ -73,7 +78,7 @@ export const ProfileTopContent = styled.div`
 
     .biography-input::placeholder {
         font: var(--Heading-7-300);
-        color: var(--grey-05);
+        color: var(--grey-04);
     }
 
     .profile-social {
@@ -120,6 +125,7 @@ export const ProfileTopContent = styled.div`
         padding-bottom: 50px;
 
         .profile-info {
+            flex-direction: row;
             width: 50%;
         }
 
@@ -129,14 +135,16 @@ export const ProfileTopContent = styled.div`
         }
 
         .profile-text {
+            align-items: start;
             width: 60%;
         }
 
         .profile-name {
-            font: var(--Heading-3-300);
+            font: var(--Heading-5-400);
         }
 
         .profile-description {
+            text-align: start;
             font: var(--Heading-7-300);
         }
 
@@ -154,13 +162,13 @@ export const ProfileTopContent = styled.div`
         }
 
         .profile-option {
-            font: var(--Heading-7-300);
+            font: var(--Heading-6-300);
             color: var(--grey-05);
             cursor: pointer;
         }
 
         .selected {
-            font: var(--Heading-3-300);
+            font: var(--Heading-5-400);
             color: var(--theme-01);
         }
 

@@ -31,7 +31,7 @@ export const DesktopDropdownContent = styled(motion.div)`
     }
 
     .title {
-        font: var(--Heading-6-300);
+        font: var(--Heading-7-400);
         color: white;
     }
 
