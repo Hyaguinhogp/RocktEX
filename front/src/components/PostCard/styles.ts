@@ -64,8 +64,8 @@ export const PostCardContent = styled.div`
     }
 
     .post-author {
-        color: var(--theme-01);
-        font: var(--Heading-7-300);
+        color: white;
+        font: var(--Heading-8-300);
         cursor: pointer;
     }
 
@@ -87,7 +87,7 @@ export const PostCardContent = styled.div`
         }
 
         .post-title {
-            font: var(--Heading-5-400);
+            font: var(--Heading-6-400);
         }
 
         .post-date {
@@ -95,7 +95,7 @@ export const PostCardContent = styled.div`
         }
 
         .post-author {
-            font: var(--Heading-6-400);
+            font: var(--Heading-7-300);
         }
     }
 `

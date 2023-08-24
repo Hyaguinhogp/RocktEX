@@ -11,7 +11,7 @@ export const MostReadContent = styled.div`
         h2 {
             position: relative;
             right: -20px;
-            font: var(--Heading-3-400);
+            font: var(--Heading-5-400);
             font-family: "Oswald", sans-serif;
             z-index: 2;
         }
@@ -19,9 +19,9 @@ export const MostReadContent = styled.div`
 
     .title-detail {
         position: relative;
-        width: 120px;
+        width: 100px;
         height: 12px;
-        background-color: var(--theme-04);
+        background-color: var(--theme-01);
         top: -10px;
     }
 
@@ -43,5 +43,11 @@ export const MostReadContent = styled.div`
 
     @media (min-width: 1200px) {
         width: 50%;
+
+        .most-read__title-container {
+        h2 {
+            font-size: 30px;
+        }
+    }
     }
 `

@@ -40,7 +40,7 @@ export const DropdownContent = styled(motion.div)`
         display: flex;
         flex-direction: column;
         gap: 15px;
-        font: var(--Heading-4-400);
+        font: var(--Heading-6-400);
 
         h3 {
             position: relative;
@@ -69,8 +69,8 @@ export const DropdownContent = styled(motion.div)`
         .selected::before {
             content: "";
             position: absolute;
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background-color: var(--theme-01);
             left: -20px;
@@ -80,8 +80,8 @@ export const DropdownContent = styled(motion.div)`
     .suboptions-line::after {
         content: "";
         display: flex;
-        height: 2px;
-        background-color: var(--grey-04);
+        height: 1px;
+        background-color: var(--grey-03);
         margin-bottom: 15px;
     }
 
