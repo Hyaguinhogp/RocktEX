@@ -2,6 +2,8 @@ import { IGame } from "../interfaces/Games";
 import { IHighligt } from "../interfaces/Highlights";
 import { IMostRead } from "../interfaces/MostReads";
 import { IPost, IPostCardData } from "../interfaces/Post";
+import { IUser } from "../interfaces/User";
+import api from "../services/api";
 
 export const HighlightsData: IHighligt[] = [
     {
@@ -91,40 +93,49 @@ export const MostReads: IMostRead[] = [
     },
 ]
 
+const User: IUser = {
+    username: "Marco Aurélio",
+    biography: "bio",
+    email: "marco@mail.com",
+    id: 1,
+    password: "password",
+    social_media: [{social_media_type: "instagram", socidal_media_handle: "instagram"}]
+}
+
 export const PostsCardData: IPostCardData[] = [
     {
         title: "Has Xbox really lost the console wars?",
         category: "Games",
         url_image: "https://assets-prd.ignimgs.com/2022/11/23/xboxseriesx-3-blogroll-1648735732292-1669247511678.jpeg",
-        author: "Marco Aurélio",
+        author: User,
         post_date: "31 Jul"
     },
     {
         title: "White House announces $40 billion in broadband funding",
         category: "Politica",
         url_image: "https://techcult.com/wp-content/uploads/2023/06/bridging-the-digital-divide-white-house-unveils-h.png",
-        author: "Marco Aurélio",
+        author: User,
         post_date: "31 Jul"
     },
     {
         title: "Making sense of the EU’s fight for user-replaceable smartphone batteries",
         category: "Informatica",
         url_image: "https://external-preview.redd.it/eu-smartphones-must-have-user-replaceable-batteries-by-2027-v0-CePuASEWf4SdQEholzc4M833jMEEaXIdijcbo-yC0Gk.jpg?auto=webp&s=fbeb5701c9bb4dbf0a7ec55bbe83842985869c8d",
-        author: "Marco Aurélio",
+        author: User,
         post_date: "31 Jul"
     },
     {
         title: "Formula E team caught using RFID scanner that could grab live tire data from other cars",
         category: "Automobilistica",
         url_image: "https://ic-cdn.flipboard.com/motorsport.com/3ce369724ad190f04c8e650eca47782a4daddd8b/_xlarge.webp",
-        author: "Marco Aurélio",
+        author: User,
         post_date: "31 Jul"
     },
     {
         title: "How to tell everyone on Gmail if you’re in — or not",
         category: "Curiosidades",
         url_image: "https://static.bundle.app/news/0lqcdkgq.tic.jpg",
-        author: "Marco Aurélio",
+        author: User,
         post_date: "31 Jul"
     },
 ]
@@ -133,7 +144,7 @@ export const Posts: IPost[] = [
     {
         title: "Blue Origin quer construir centros de lançamento de foguetes fora dos EUA para competir com SpaceX",
         category: "Espaço",
-        author: "Hyago Matos",
+        author: User,
         post_date: "16 jun 2023",
         complete_post: 
             `i(https://t2.tudocdn.net/674421?w=646&h=284---Imagem ilustrativa, Blue Origin)

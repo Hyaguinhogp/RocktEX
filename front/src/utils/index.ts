@@ -17,7 +17,6 @@ export const calculateDiscountPercent = (normalPrice: number, actualPrice: numbe
 
 export const CompletePostToHTML = (completePost: string) => {
     const paragraphs = completePost.split("\n").map((paragraph) => paragraph.trim());
-    console.log(paragraphs);
     const completeHTML = paragraphs.map((paragraph) => {
         return paragraph.substring(0, 1) == "i" ? createPostImageHTML(paragraph) : createPostTextHTML(paragraph);
     }).join("\n");
@@ -43,4 +42,14 @@ const createPostImageHTML = (text: string) => {
     </div>`;
 
     return imageHTML;
+}
+
+export const formatDate = (dateIso: string) => {
+    console.log(dateIso);
+    const date = new Date(dateIso);
+    const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+    const day = date.getDate();
+    const dateFormated = `${month} ${day}`
+
+    return dateFormated;
 }
