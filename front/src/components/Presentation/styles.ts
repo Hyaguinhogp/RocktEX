@@ -24,8 +24,10 @@ export const PresentationContent = styled(DefaultContent)`
     }
 
     @media(min-width: 1200px) {
+        padding: 15vh 0;
+
         h1 {
-            font-size: 96px;
+            font-size: 70px;
         }
 
         h2 {

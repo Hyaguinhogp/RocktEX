@@ -12,7 +12,7 @@ interface IHighlightContentProps {
 
 export const HighlightContainer = styled(DefaultContainer)`
     position: relative;
-    height: ${({ size }: IHighlightContainerProps) => size == 1 ? "600px" : "292px"};
+    height: ${({ size }: IHighlightContainerProps) => size == 1 ? "400px" : "250px"};
     padding: 15px;
     overflow: hidden;
     
@@ -39,7 +39,7 @@ export const HighlightContainer = styled(DefaultContainer)`
     }
 
     @media (min-width: 1200px) {
-        height: ${({ size }: IHighlightContainerProps) => size == 1 ? "800px" : "392px"};
+        height: ${({ size }: IHighlightContainerProps) => size == 1 ? "500px" : "242px"};
         padding: 30px;
     }
 `
@@ -69,7 +69,7 @@ export const HighlightContent = styled(DefaultContent)`
 
     h2 {
         color: white;
-        font: var(--Heading-6-400);
+        font: var(--Heading-4-400);
         font-family: 'Oswald', sans-serif;
     }
 
@@ -93,7 +93,7 @@ export const HighlightContent = styled(DefaultContent)`
     @media (min-width: 1200px) {
         .highlight_bottom_container {
             .author {
-                margin-top: 10px;
+                margin-top: 0;
                 font: var(--Heading-7-300);
             }
 
@@ -112,12 +112,10 @@ export const HighlightContent = styled(DefaultContent)`
 
 export const HighlightTitle = styled.div`
     display: flex;
-    margin-bottom: 10px;
     cursor: pointer;
 
     .blue-detail {
         display: flex;
-        content: "";
         width: 5px;
         margin-right: 10px;
         border-radius: 2px;

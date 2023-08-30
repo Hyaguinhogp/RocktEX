@@ -5,6 +5,7 @@ import Dropdown from "../Dropdown";
 import Navbar, { TDesktopDropdown } from "../Navbar";
 import { FalseNavbar } from "./styles";
 import DesktopDropdown from "../DesktopDropdown";
+import Footer from "../Footer";
 
 interface IDefaultPageComponentProps {
     children: ReactNode
@@ -45,6 +46,7 @@ const DefaultPageComponent = ( { children, falseNavbar=false }: IDefaultPageComp
                 {isDesktopDropdownActive && <DesktopDropdown desactiveDesktopDropdown={desactiveDesktopDropdown} type={typeDesktopDropdown} />}
             </AnimatePresence>
             {children}
+            <Footer />
         </DefaultPage>
     )
 }

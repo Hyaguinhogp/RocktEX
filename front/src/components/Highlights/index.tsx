@@ -6,9 +6,6 @@ import { HighlightsContainer, HighlightsContent } from "./styles";
 const Highlights = ({highlights}: IHighlightProps) => {
     return (
         <HighlightsContainer>
-                <div className="category-panel-mobile">
-                    <CategoriesPanel />
-                </div>
             <HighlightsContent>
                 <div className="highlight_first_section">
                     <Highlight size={1} highlight={highlights[0]} />
@@ -17,10 +14,6 @@ const Highlights = ({highlights}: IHighlightProps) => {
                 <div className="highlight_second_section">
                     <Highlight size={2} highlight={highlights[1]} />
                     <Highlight size={2} highlight={highlights[2]} />
-                </div>
-
-                <div className="category-panel-desktop">
-                    <CategoriesPanel />
                 </div>
             </HighlightsContent>
         </HighlightsContainer>
