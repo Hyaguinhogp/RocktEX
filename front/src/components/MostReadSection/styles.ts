@@ -3,7 +3,6 @@ import { DefaultContainer, DefaultContent } from "../../styles/global"
 
 export const MostReadSectionContainer = styled(DefaultContainer)`
     padding-top: 50px;
-    padding-bottom: 50px;
     background-color: var(--theme-00);    
 `
 

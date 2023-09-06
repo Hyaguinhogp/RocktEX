@@ -9,3 +9,4 @@ class Post(models.Model):
     post_date = models.DateTimeField(auto_now_add=True)
     complete_post = models.TextField()
     author = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='posts')
+    views = models.IntegerField(default=0)
