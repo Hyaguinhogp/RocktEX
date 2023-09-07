@@ -8,6 +8,7 @@ export const PostComponentContainer = styled(DefaultContainer)`
 export const PostComponentContent = styled.div`
     display: flex;
     flex-direction: column;
+    padding-bottom: 5vh;
 
     .post-date {
         display: flex;

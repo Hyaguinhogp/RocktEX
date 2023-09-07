@@ -16,7 +16,7 @@ const Highlight = ({size, highlight}:IHighlightProps) => {
                 </div>
                 <div className="highlight_bottom_container">
                     <HighlightTitle>
-                        <div className="blue-detail"></div>
+                        {/* <div className="blue-detail"></div> */}
                         <h2 className="highlight_title">{highlight.title}</h2>
                     </HighlightTitle>
 

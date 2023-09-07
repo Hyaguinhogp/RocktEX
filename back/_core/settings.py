@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = ['rest_framework', 'corsheaders']
 MY_APPS = [
     'accounts',
     'social_media',
+    'posts',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS

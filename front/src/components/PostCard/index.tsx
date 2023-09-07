@@ -23,7 +23,7 @@ const PostCard = ({ postData, isProfileAndOwner=false }: IPostCardProps) => {
                     </div>
                     <div className="post-author-container">
                         <h3 className="post-date">{post_date}</h3>
-                        <h3 className="post-author">{author}</h3>
+                        <h3 className="post-author">{author.username}</h3>
                     </div>
                 </div>
             </div>
