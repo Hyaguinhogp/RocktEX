@@ -23,8 +23,4 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
             serializer.save()
             
         return super().get(request, *args, **kwargs)
-    
-    def update(self, request, *args, **kwargs):
-        print(request.data)
-        return super().update(request, *args, **kwargs)
 
