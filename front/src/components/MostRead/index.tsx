@@ -1,13 +1,20 @@
+import { useEffect, useState } from "react";
 import { IMostRead } from "../../interfaces/MostReads";
-import { IPostCardData } from "../../interfaces/Post";
+import { IPostBase, IPostCardData } from "../../interfaces/Post";
 import MostReadCard from "../MostReadCard";
 import { MostReadContent } from "./styles";
+import api from "../../services/api";
 
-interface IMostReadProps {
-    most_reads: IPostCardData[]
-}
+const MostRead = () => {
 
-const MostRead = ({ most_reads }: IMostReadProps) => {
+    const [mostReads, setMostReads] = useState<IPostBase[]>([])
+
+    useEffect(() => {
+        api.get("/posts/views/")
+            .then((res) => {
+                setMostReads(res.data)
+            })
+    }, [])
 
     return (
         <MostReadContent>
@@ -17,8 +24,8 @@ const MostRead = ({ most_reads }: IMostReadProps) => {
             </div>
 
             <div className="most-reads">
-                {most_reads.map((most_read, index) => (
-                    <MostReadCard key={index} position={index + 1} size={index == 0 ? "130px" : "100px"} data={most_read} />)
+                {mostReads?.map((mostRead, index) => (
+                    <MostReadCard key={index} position={index + 1} size={index == 0 ? "130px" : "100px"} data={mostRead} />)
                 )}
             </div>
 

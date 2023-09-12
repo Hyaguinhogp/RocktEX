@@ -5,6 +5,8 @@ export interface IPostBase {
     category: string
     author: IUser
     post_date: string
+    cover_image: string
+    views: number
 }
 
 export interface IPost extends IPostBase {

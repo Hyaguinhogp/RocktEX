@@ -1,11 +1,11 @@
 import { IGame } from "../interfaces/Games";
-import { IHighligt } from "../interfaces/Highlights";
+/* import { IHighligt } from "../interfaces/Highlights";
 import { IMostRead } from "../interfaces/MostReads";
 import { IPost, IPostCardData } from "../interfaces/Post";
 import { IUser } from "../interfaces/User";
-import api from "../services/api";
+import api from "../services/api"; */
 
-export const HighlightsData: IHighligt[] = [
+/* export const HighlightsData: IHighligt[] = [
     {
         title: "SpaceX lança novo foguete que promete revolucionar a viagem espacial!",
         description: "O novo foguete é repleto de detalhes e tem destino à Marte! ...",
@@ -24,7 +24,7 @@ export const HighlightsData: IHighligt[] = [
         date: "19 Jul",
         image_url: "https://mobilidade.estadao.com.br/wp-content/uploads/2022/11/tecnologia-na-industria-automobilistica.jpg"
     },
-]
+] */
 
 export const GamesData: IGame[] = [
     {
@@ -65,7 +65,7 @@ export const GamesData: IGame[] = [
     },
 ]
 
-export const MostReads: IMostRead[] = [
+/* export const MostReads: IMostRead[] = [
     {
         title: "Has Xbox really lost the console wars?",
         category: "Games",
@@ -152,4 +152,4 @@ export const Posts: IPost[] = [
             i(https://t2.tudocdn.net/674421?w=646&h=284---Imagem ilustrativa, Blue Origin)
             t(“Estamos procurando tudo o que podemos fazer para adquirir, escalar para atender melhor nossos clientes”, disse Bob Smith, CEO da Blue Origin, em entrevista ao Financial Times. “Não é uma questão de tamanho, mas de quanto isso pode acelerar nosso roteiro do que estamos planejando fazer”, continuou o executivo. Recentemente, a Blue Origin comprou a Honeybee Robotics, uma empresa de desenvolvimento e produção de robôs voltados à exploração planetária, medicina e outras aplicações. A aquisição foi parte de uma iniciativa com investimento de US$ 3,4 bilhões para a construção de um módulo lunar que contribuirá para a missão Artemis da NASA. O objetivo é ampliar o poder de concorrência da empresa contra a SpaceX, companhia de serviços espaciais de Elon Musk, que está fornecendo soluções para as missões lunares. Embora a Blue Origin tenha sido a primeira a lançar, pousar e reutilizar um foguete com sucesso, a empresa ficou atrás da rival após adiamentos de produção. Com a expansão global, é possível que a empresa “irmã” da Amazon avance tecnologicamente e tenha maiores chances para competir com o progresso da SpaceX.)`
     }
-]
+] */

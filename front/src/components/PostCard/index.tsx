@@ -1,19 +1,19 @@
-import { IPostCardData } from "../../interfaces/Post";
+import { IPostBase, IPostCardData } from "../../interfaces/Post";
 import Category from "../Category";
 import { PostCardContent } from "./styles";
 import { BiEdit } from "react-icons/bi"
 
 interface IPostCardProps {
-    postData: IPostCardData
+    postData: IPostBase
     isProfileAndOwner?: boolean
 }
 
 const PostCard = ({ postData, isProfileAndOwner=false }: IPostCardProps) => {
 
-    const { title, category, author, post_date, url_image } = {...postData}
+    const { title, category, author, post_date, cover_image } = {...postData}
 
     return (
-        <PostCardContent url_image={url_image}>
+        <PostCardContent url_image={cover_image}>
             <div className="post-image"></div>
             <div className="post-mid-container">
                 <h3 className="post-title">{title}</h3>
