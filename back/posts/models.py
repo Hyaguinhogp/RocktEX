@@ -10,3 +10,5 @@ class Post(models.Model):
     complete_post = models.TextField()
     author = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='posts')
     views = models.IntegerField(default=0)
+    source = models.CharField(max_length=2000)
+    cover_image = models.CharField(max_length=2000)
