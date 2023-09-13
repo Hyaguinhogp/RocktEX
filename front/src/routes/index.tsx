@@ -7,7 +7,7 @@ const RoutesMain = () => {
     return (
         <Routes>
             <Route path='/home' element={<Home />} />
-            <Route path='/post' element={<Post />} />
+            <Route path='/posts/:id' element={<Post />} />
             <Route path='/register' element={<AuthenticationPage type="register" />} />
             <Route path='/login' element={<AuthenticationPage type="login" />} />
             <Route path='/profile' element={<Profile />} />

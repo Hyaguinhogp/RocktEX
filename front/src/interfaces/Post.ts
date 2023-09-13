@@ -1,6 +1,7 @@
 import { IUser } from "./User"
 
 export interface IPostBase {
+    id: string
     title: string
     category: string
     author: IUser
