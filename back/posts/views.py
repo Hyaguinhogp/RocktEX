@@ -18,6 +18,16 @@ class PostLatestView(ListAPIView):
 class PostViewsView(ListAPIView):
     queryset = Post.objects.all().order_by('-views')
     serializer_class = PostSerializer
+
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+    
+class PostSearchView(APIView):
+    def get(self, request, *args, **kwargs):
+        search = request.GET.get('search', '')
+        queryset = Post.objects.filter(title__icontains=search).order_by('-post_date')
+        serializer = PostSerializer(queryset, many=True)
+        return Response(serializer.data)
     
 class PostCreateView(CreateAPIView):
     queryset = Post.objects.all()
