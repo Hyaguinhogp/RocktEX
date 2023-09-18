@@ -9,7 +9,7 @@ from .serializer import PostSerializer
 from django.shortcuts import get_object_or_404
 from django.forms.models import model_to_dict
 from accounts.models import Account
-from django.db.models import Count
+from rest_framework.pagination import PageNumberPagination
 
 class PostLatestView(ListAPIView):
     queryset = Post.objects.order_by('-post_date')
@@ -22,12 +22,15 @@ class PostViewsView(ListAPIView):
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
     
-class PostSearchView(APIView):
+class PostSearchView(APIView, PageNumberPagination):
+
     def get(self, request, *args, **kwargs):
         search = request.GET.get('search', '')
         queryset = Post.objects.filter(title__icontains=search).order_by('-post_date')
-        serializer = PostSerializer(queryset, many=True)
-        return Response(serializer.data)
+        result_page = self.paginate_queryset(queryset, request, view=self)
+        serializer = PostSerializer(result_page, many=True)
+
+        return self.get_paginated_response(serializer.data)
     
 class PostCreateView(CreateAPIView):
     queryset = Post.objects.all()

@@ -3,6 +3,7 @@ import Home from "../pages/Home"
 import Post from "../pages/Post"
 import AuthenticationPage from "../pages/AuthenticationPage"
 import Profile from "../pages/Profile"
+import Search from "../pages/Search"
 const RoutesMain = () => {
     return (
         <Routes>
@@ -11,6 +12,7 @@ const RoutesMain = () => {
             <Route path='/register' element={<AuthenticationPage type="register" />} />
             <Route path='/login' element={<AuthenticationPage type="login" />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/search' element={<Search />} />
             <Route path='*' element={<Navigate to='/home' />} />
         </Routes>
     )

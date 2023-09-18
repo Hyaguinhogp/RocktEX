@@ -8,21 +8,22 @@ import { BiEdit } from "react-icons/bi"
 interface IPostCardProps {
     postData: IPostBase
     isProfileAndOwner?: boolean
+    color?: "black" | "white"
 }
 
-const PostCard = ({ postData, isProfileAndOwner=false }: IPostCardProps) => {
+const PostCard = ({ postData, isProfileAndOwner=false, color="white" }: IPostCardProps) => {
 
     const { id, title, category, author, post_date, cover_image } = {...postData}
     const navigate = useNavigate()
 
     return (
-        <PostCardContent url_image={cover_image}>
+        <PostCardContent url_image={cover_image} color={color}>
             <div className="post-image"></div>
             <div className="post-mid-container">
                 <h3 onClick={() => navigate(`/posts/${id}`)} className="post-title">{title}</h3>
                 <div className="post-info-container">
                     <div className="category-container">
-                        <Category category={category} />
+                        <Category category={category} color={color} />
                     </div>
                     <div className="post-author-container">
                         <h3 className="post-date">{formatDate(post_date)}</h3>

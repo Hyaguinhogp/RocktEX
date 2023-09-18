@@ -12,7 +12,7 @@ const MostRead = () => {
     useEffect(() => {
         api.get("/posts/views/")
             .then((res) => {
-                setMostReads(res.data)
+                setMostReads(res.data.results)
             })
     }, [])
 

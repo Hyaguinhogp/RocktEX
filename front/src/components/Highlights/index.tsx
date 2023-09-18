@@ -13,8 +13,7 @@ const Highlights = () => {
     useEffect(() => {
         api.get("/posts/")
             .then((res) => {
-                console.log(res.data)
-                setHighlights(res.data)
+                setHighlights(res.data.results)
             })
             .catch((err) => {
                 console.log(err)

@@ -19,8 +19,7 @@ const GamesOnSale = ({ Games }: IGamesOnSaleProps) => {
         setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
         api.get("/games/")
         .then((res) => {
-            console.log(res.data);
-            setGames(res.data);
+            setGames(res.data.results);
         })
     }, [])
 
