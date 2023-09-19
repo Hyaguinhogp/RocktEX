@@ -3,18 +3,20 @@ import { IPost } from "../../interfaces/Post";
 import api from "../../services/api";
 import { CompletePostToHTML, formatDate } from "../../utils";
 import { PostComponentContent } from "./styles";
+import { useParams } from "react-router-dom";
 
 const PostComponent = () => {
 
     const [post, setPost] = useState<IPost>({} as IPost)
     const [postHtml, setPostHtml] = useState("");
+    const { id } = useParams();
 
     useEffect(() => {
-        api.get("http://localhost:8000/api/posts/")
+        api.get(`http://localhost:8000/api/posts/${id}/?complete=true`)
         .then((response) => {
-            response.data[0].post_date = formatDate(response.data[0].post_date)
-            setPost(response.data[0]);
-            setPostHtml(CompletePostToHTML(response.data[0].complete_post));
+            response.data.post_date = formatDate(response.data.post_date)
+            setPost(response.data);
+            setPostHtml(CompletePostToHTML(response.data.complete_post));
         })
     }, [])
 

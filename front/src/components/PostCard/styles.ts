@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 interface IPostCardContentContent {
     url_image: string
+    color: string
 }
 
 export const PostCardContent = styled.div`
@@ -35,7 +36,7 @@ export const PostCardContent = styled.div`
     }
 
     .post-title {
-        color: white;
+        color: ${({ color }: IPostCardContentContent) => color};
         font: var(--Heading-6-400);
         cursor: pointer;
     }
@@ -61,10 +62,11 @@ export const PostCardContent = styled.div`
     .post-date {
         font: var(--Heading-8-300);
         color: var(--grey-05);
+        color: var(${({ color }: IPostCardContentContent) => color == "white" ? "--grey-05" : "--grey-03"});
     }
 
     .post-author {
-        color: white;
+        color: ${({ color }: IPostCardContentContent) => color};
         font: var(--Heading-8-300);
         cursor: pointer;
     }

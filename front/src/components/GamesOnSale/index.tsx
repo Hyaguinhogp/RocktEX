@@ -3,6 +3,7 @@ import GameCard from "../GameCard";
 import { GamesOnSaleContainer, GamesOnSaleContent } from "./styles";
 import { motion } from "framer-motion";
 import { IGame } from "../../interfaces/Games";
+import api from "../../services/api";
 
 interface IGamesOnSaleProps {
     Games: IGame[]
@@ -12,9 +13,14 @@ const GamesOnSale = ({ Games }: IGamesOnSaleProps) => {
 
     const carousel = useRef<HTMLDivElement>(null);
     const [width, setWidth] = useState(0);
+    const [games, setGames] = useState<IGame[]>([]);
 
     useEffect(() => {
-        setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth)
+        setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
+        api.get("/games/")
+        .then((res) => {
+            setGames(res.data.results);
+        })
     }, [])
 
     return (
@@ -34,7 +40,7 @@ const GamesOnSale = ({ Games }: IGamesOnSaleProps) => {
                         drag="x"
                         dragConstraints={{ right: 0, left: -width}}
                     >
-                        {Games.map((game, index) => <GameCard key={index} game={game} />)}
+                        {games.map((game, index) => <GameCard key={index} game={game} />)}
                     </motion.div>
                 </motion.div>
             </GamesOnSaleContent>

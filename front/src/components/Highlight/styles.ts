@@ -3,7 +3,7 @@ import { DefaultContainer, DefaultContent } from "../../styles/global"
 
 interface IHighlightContainerProps {
     size: 1 | 2
-    image_url: string
+    image_url?: string
 }
 
 interface IHighlightContentProps {
@@ -23,7 +23,7 @@ export const HighlightContainer = styled(DefaultContainer)`
         left: 0;
         width: 100%;
         height: 100%;
-        background: url(${({ image_url }: IHighlightContainerProps) => image_url});
+        background: ${({ image_url }: IHighlightContainerProps) => image_url ? `url(${image_url})` : 'var(--grey-08)' };
         background-size: cover;
         background-position: 50%;
         filter: brightness(70%);
@@ -90,6 +90,43 @@ export const HighlightContent = styled(DefaultContent)`
         cursor: pointer;
     }
 
+    .date-empty {
+        background-color: white;
+        width: 40px;
+        height: 20px;
+    }
+
+
+    .title-empty::before {
+        content: "";
+        display: block;
+        position: relative;
+        background-color: white;
+        width: 110%;
+        height: 30px;
+        top: -40px;
+    }
+
+    .title-empty {
+        background-color: white;
+        width: 75%;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .author-empty__container {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .author-empty {
+        background-color: white;
+        width: 20%;
+        height: 20px;
+    }
+
     @media (min-width: 1200px) {
         .highlight_bottom_container {
             .author {
@@ -110,7 +147,7 @@ export const HighlightContent = styled(DefaultContent)`
     }
 `
 
-export const HighlightTitle = styled.div`
+export const HighlightTitle = styled.a`
     display: flex;
     cursor: pointer;
 

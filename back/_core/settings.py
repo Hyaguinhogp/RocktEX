@@ -47,6 +47,7 @@ MY_APPS = [
     'accounts',
     'social_media',
     'posts',
+    'games',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -145,6 +146,11 @@ SIMPLE_JWT = {
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
 
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',)
+}
+
+REST_FRAMEWORK = {
+     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+     "PAGE_SIZE": 6,
 }
 
 

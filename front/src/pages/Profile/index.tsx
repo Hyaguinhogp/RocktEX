@@ -6,7 +6,7 @@ import { ReactComponent as Instagram } from "../../assets/instagram_icon.svg"
 import { ReactComponent as Twitter } from "../../assets/twiter_icon.svg"
 import ProfilePost from "../../components/PostCard";
 import { useContext, useEffect, useRef, useState } from "react";
-import { PostsCardData } from "../../database";
+/* import { PostsCardData } from "../../database"; */
 import { userContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineAddCircle } from "react-icons/md"
@@ -59,7 +59,7 @@ const Profile = () => {
                 <ProfileBottomContent minHeight={ProfileBottomContentMinHeight}>
                     <div className="profile-posts">
                         {
-                            PostsCardData.map((post, index) => <ProfilePost key={index + 1} postData={post} isProfileAndOwner />)
+                            /* PostsCardData.map((post, index) => <ProfilePost key={index + 1} postData={post} isProfileAndOwner />) */
                         }
                     </div>
                 </ProfileBottomContent>
