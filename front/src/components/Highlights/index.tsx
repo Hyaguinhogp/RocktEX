@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
 import { IHighlightProps } from "../../interfaces/Highlights";
 import CategoriesPanel from "../CategoriesPanel";
 import Highlight from "../Highlight";
 import { HighlightsContainer, HighlightsContent } from "./styles";
+import api from "../../services/api";
+import { IPostBase } from "../../interfaces/Post";
 
-const Highlights = ({highlights}: IHighlightProps) => {
+const Highlights = () => {
+
+    const [highlights, setHighlights] = useState<IPostBase[]>([]);
+
+    useEffect(() => {
+        api.get("/posts/")
+            .then((res) => {
+                setHighlights(res.data.results)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+
     return (
         <HighlightsContainer>
             <HighlightsContent>

@@ -5,17 +5,17 @@ import MiniPost from "../../components/MiniPost";
 import MostRead from "../../components/MostRead";
 import MostReadSection from "../../components/MostReadSection";
 import Presentation from "../../components/Presentation";
-import { GamesData, HighlightsData, PostsCardData } from "../../database";
+import { GamesData } from "../../database";
 
 const Home = () => {
 
     return (
         <DefaultPageComponent falseNavbar>
             <Presentation />
-            <Highlights highlights={HighlightsData} />
+            <Highlights />
             <GamesOnSale Games={GamesData} />
             <MostReadSection>
-                <MostRead most_reads={PostsCardData} />
+                <MostRead />
                 <MiniPost />
             </MostReadSection>
         </DefaultPageComponent>

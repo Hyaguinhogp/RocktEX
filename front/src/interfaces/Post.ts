@@ -1,10 +1,13 @@
 import { IUser } from "./User"
 
 export interface IPostBase {
+    id: string
     title: string
     category: string
     author: IUser
     post_date: string
+    cover_image: string
+    views: number
 }
 
 export interface IPost extends IPostBase {
