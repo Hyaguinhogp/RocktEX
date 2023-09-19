@@ -2,11 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { ISearchProps } from ".";
 
-export const SearchContainer = styled.div`
+interface ISearchContainerProps {
+    isMobile: boolean
+}
+
+export const SearchContainer = styled.form`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ${({ isMobile }: ISearchProps) => !isMobile && "width: 20vw"};
+    ${({ isMobile }: ISearchContainerProps) => !isMobile && "width: 20vw"};
     height: 52px;
     padding: 0 15px;
     margin-bottom: 50px;

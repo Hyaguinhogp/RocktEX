@@ -59,7 +59,7 @@ const Dropdown = ({ desactiveDropdown }: IDropdownProps) => {
                 <div className="close-container">
                     <IoIosCloseCircle className="close-button" onClick={() => desactiveDropdown()}/>
                 </div>
-                <Search isMobile/>
+                <Search isMobile desactiveDesktopDropdown={desactiveDropdown}/>
                 <div className="options-container">
                     <div className="suboptions-container suboptions-line">
                         <h3 className="selected">Home</h3>

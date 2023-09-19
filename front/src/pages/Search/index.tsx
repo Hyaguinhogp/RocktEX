@@ -15,24 +15,32 @@ const Search = () => {
         const search = searchParams.get('search');
         api.get(`/posts/search/?search=${search}`)
             .then((res) => {
-                console.log(res.data)
                 setResultPosts(res.data.results)
             })
-    }, [])
+    }, [searchParams])
 
     return (
-        <DefaultPageComponent falseNavbar>
+        <DefaultPageComponent>
             <SearchPostsContainer>
                 <SearchPostsContent>
-                    <h1>Resultados para <span className="search-string">"{searchParams.get("search")}":</span></h1>
-                    <div className="posts">
-                        {resultPosts.length != 0 && resultPosts.map((post) => <PostCard key={post.id} postData={post} color="black" />)}
+                    <div className="search-top-container">
+                        <h1>Resultados para <span className="search-string">"{searchParams.get("search")}":</span></h1>
+                        {resultPosts.length != 0 ?
+                            <div className="posts">
+                                {resultPosts.map((post) => <PostCard key={post.id} postData={post} color="black" />)}
+                            </div>
+                            :
+                            <h2 className="no-results">Sem resultados!</h2>
+                        }
                     </div>
-                    <div className="result-pages">
-                        <p>anterior</p>
-                        <p>1</p>
-                        <p>próxima</p>
-                    </div>
+                    
+                    {resultPosts.length != 0 &&
+                        <div className="result-pages">
+                            <p>anterior</p>
+                            <p>1</p>
+                            <p>próxima</p>
+                        </div>
+                    }
                 </SearchPostsContent>
             </SearchPostsContainer>
         </DefaultPageComponent>

@@ -1,17 +1,29 @@
 import styled from "styled-components";
 import { DefaultContainer, DefaultContent } from "../../styles/global";
 
-export const SearchPostsContainer = styled(DefaultContainer)``
+export const SearchPostsContainer = styled(DefaultContainer)`
+    min-height: 70vh;
+    align-items: start;
+`
 
 export const SearchPostsContent = styled(DefaultContent)`
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+    justify-content: space-between;
+
     h1 {
-        font: var(--Heading-3-400);
+        font: var(--Heading-4-400);
         margin: 8vh 0 2vh 0;
 
     }
 
+    .no-results {
+        font: var(--Heading-4-300);
+    }
+
     .search-string {
-        font: var(--Heading-3-300);
+        font: var(--Heading-4-300);
     }
 
     .result-pages {
@@ -22,6 +34,7 @@ export const SearchPostsContent = styled(DefaultContent)`
         margin-bottom: 8vh;
         gap: 20vw;
         font: var(--Heading-5-300);
+        justify-self: end;
     }
     
     @media(min-width: 1200px) {

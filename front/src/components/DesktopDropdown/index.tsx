@@ -96,7 +96,7 @@ const DesktopDropdown = ({ desactiveDesktopDropdown, type }: IDesktopDropdownPro
                 </>}
 
                 {type == "search" && <div className="desktop-search">
-                        <Search isMobile={false} />
+                        <Search isMobile={false} desactiveDesktopDropdown={desactiveDesktopDropdown} />
                     </div>}
             </DesktopDropdownContent>
         </DesktopDropdownContainer>
