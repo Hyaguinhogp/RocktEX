@@ -19,9 +19,9 @@ export const PostCardContent = styled.div`
 
     .post-image {
         display: flex;
-        width: 100px;
-        height: 100px;
-        min-width: 100px;
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
         border-radius: 4px;
         background-image: url(${({ url_image }: IPostCardContentContent) => url_image});
         background-position: center;
@@ -37,7 +37,10 @@ export const PostCardContent = styled.div`
 
     .post-title {
         color: ${({ color }: IPostCardContentContent) => color};
-        font: var(--Heading-6-400);
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 23px;
         cursor: pointer;
     }
 
@@ -60,14 +63,14 @@ export const PostCardContent = styled.div`
     }
 
     .post-date {
-        font: var(--Heading-8-300);
+        font: var(--Heading-7-300);
         color: var(--grey-05);
         color: var(${({ color }: IPostCardContentContent) => color == "white" ? "--grey-05" : "--grey-03"});
     }
 
     .post-author {
         color: ${({ color }: IPostCardContentContent) => color};
-        font: var(--Heading-8-300);
+        font: var(--Heading-7-300);
         cursor: pointer;
     }
 
@@ -89,7 +92,8 @@ export const PostCardContent = styled.div`
         }
 
         .post-title {
-            font: var(--Heading-6-400);
+            font: var(--Heading-6-300);
+            line-height: 30px;
         }
 
         .post-date {

@@ -2,12 +2,11 @@ import { CategoryContainer } from "./styles";
 
 interface ICategoryProps {
     category: string
-    color?: "white" | "black"
 }
 
-const Category = ({ category, color="white" }: ICategoryProps) => {
+const Category = ({ category }: ICategoryProps) => {
     return (
-        <CategoryContainer color={color}>
+        <CategoryContainer>
             <span>{category}</span>
         </CategoryContainer>
     )

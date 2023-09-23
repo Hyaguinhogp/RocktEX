@@ -27,12 +27,16 @@ export const PresentationContent = styled(DefaultContent)`
     
     h1 {
         font-size: 70px;
+        font-weight: 900;
     }
     
     h2 {
-        line-height: 1.5rem;
-        font-size: 20px;
         text-align: center;
+        line-height: 1.5rem;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 2.0rem;
+        letter-spacing: 2px;
     }
 
     .presentation-image__container {
@@ -48,18 +52,19 @@ export const PresentationContent = styled(DefaultContent)`
     }
 
     @media(min-width: 1200px) {
+        justify-content: space-between;
         flex-direction: row;
         padding: 15vh 0;
 
-        h1 {
-            font-size: 70px;
-        }
-
         h2 {
             line-height: 2.5rem;
-            font-size: 24px;
-            text-align: center;
-            max-width: 70%;
+            font-size: 20px;
+            text-align: start;
+        }
+
+        .presentation-text {
+            width: 40%;
+            align-items: start;
         }
 
         .presentation-image__container {

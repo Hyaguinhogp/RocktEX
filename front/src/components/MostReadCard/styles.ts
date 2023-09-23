@@ -17,10 +17,6 @@ export const MostReadCardContainer = styled.div`
         align-items: center;
         justify-content: space-between;
         margin-right: 10px;
-
-        span {
-            margin-right: 10px;
-        }
     }
 
     figure {

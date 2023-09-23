@@ -5,6 +5,7 @@ export const MiniPostContent = styled.div`
     display: flex;
     flex-direction: column;
     color: white;
+    margin-top: 50px;
 
     .mini-post__image {
         width: 100%;
@@ -17,7 +18,7 @@ export const MiniPostContent = styled.div`
     .mini-post__title {
         position: relative;
         top: -25px;
-        font: var(--Heading-3-500);
+        font: var(--Heading-2-500);
         font-family: 'Oswald', sans-serif;
         line-height: 35px;
         text-shadow: 0 0 3px var(--theme-00);
@@ -30,8 +31,8 @@ export const MiniPostContent = styled.div`
     }
 
     .mini-post__text {
-        font: var(--Heading-7-400);
-        font-family: 'Inria Serif', serif;
+        font: var(--Heading-6-200);
+        letter-spacing: 1px;
         line-height: 26px;
         margin-bottom: 15px;
     }
@@ -56,14 +57,15 @@ export const MiniPostContent = styled.div`
 
     @media (min-width: 1200px) {
         width: 50%;
+        margin-top: 0;
 
         .mini-post__title {
-            font: var(--Heading-2-500);
+            font: var(--Heading-1-500);
             font-family: 'Oswald', sans-serif;
+            line-height: 40px;
         }
         .mini-post__text {
-            font: var(--Heading-6-400);
-            font-family: 'Inria Serif', serif;
+            line-height: 30px;
         }
     } 
 `

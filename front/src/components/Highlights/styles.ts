@@ -12,6 +12,7 @@ export const HighlightsContainer = styled(DefaultContainer)`
 export const HighlightsContent = styled(DefaultContent)`
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
     gap: 16px;
 
     .highlight_first_section {

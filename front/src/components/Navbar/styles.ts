@@ -75,6 +75,12 @@ export const NavbarContent = styled(DefaultContent)`
             justify-content: space-between;
         }
 
+        h3 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            cursor: default;
+        }
+
         a {
             color: white;
             text-decoration: none;

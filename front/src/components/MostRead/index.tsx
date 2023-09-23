@@ -19,8 +19,7 @@ const MostRead = () => {
     return (
         <MostReadContent>
             <div className="most-read__title-container">
-                <h2>Mais Lidos</h2>
-                <div className="title-detail"></div>
+                <h2>Mais lidos</h2>
             </div>
 
             <div className="most-reads">

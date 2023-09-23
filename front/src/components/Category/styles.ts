@@ -9,18 +9,19 @@ export const CategoryContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: fit-content;
-    padding: 2px 5px;
+    padding: 3px 15px;
     overflow: hidden;
     background-color: var(--theme-01);
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     
     span {
         font: var(--Heading-7-300);
-        color: ${({color}: ICategoryContainerProps) => color == "white" ? "black" : "white"};
+        color: white;
     }
 
     @media (min-width: 1200px) {
-        padding: 3px 15px;
         font: var(--Heading-7-300);
     }
 `

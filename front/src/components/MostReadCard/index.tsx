@@ -16,7 +16,7 @@ const MostReadCard = ({ position, size, data}: IMostReadCardProps) => {
                 <span className="rank">#{position}</span>
             </div>
 
-            <PostCard postData={data} />
+            <PostCard postData={data} color="white" />
         </MostReadCardContainer>
     )
 }

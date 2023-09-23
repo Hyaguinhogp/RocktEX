@@ -9,20 +9,10 @@ export const MostReadContent = styled.div`
     .most-read__title-container {
         margin-bottom: 20px;
         h2 {
-            position: relative;
-            right: -20px;
-            font: var(--Heading-5-400);
-            font-family: "Oswald", sans-serif;
+            font-size: 24px;
+            font-weight: 400;
             z-index: 2;
         }
-    }
-
-    .title-detail {
-        position: relative;
-        width: 100px;
-        height: 12px;
-        background-color: var(--theme-01);
-        top: -10px;
     }
 
     .most-reads {
@@ -35,7 +25,7 @@ export const MostReadContent = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 40px 0;
+        margin-top: 40px;
         font: var(--Heading-7-300);
         color: var(--grey-05);
         text-decoration: underline;
@@ -43,11 +33,5 @@ export const MostReadContent = styled.div`
 
     @media (min-width: 1200px) {
         width: 50%;
-
-        .most-read__title-container {
-        h2 {
-            font-size: 30px;
-        }
-    }
     }
 `

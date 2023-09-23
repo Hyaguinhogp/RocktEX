@@ -23,7 +23,7 @@ const PostCard = ({ postData, isProfileAndOwner=false, color="white" }: IPostCar
                 <h3 onClick={() => navigate(`/posts/${id}`)} className="post-title">{title}</h3>
                 <div className="post-info-container">
                     <div className="category-container">
-                        <Category category={category} color={color} />
+                        <Category category={category} />
                     </div>
                     <div className="post-author-container">
                         <h3 className="post-date">{formatDate(post_date)}</h3>

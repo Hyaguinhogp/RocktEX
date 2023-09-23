@@ -15,6 +15,7 @@ export const HighlightContainer = styled(DefaultContainer)`
     height: ${({ size }: IHighlightContainerProps) => size == 1 ? "400px" : "250px"};
     padding: 15px;
     overflow: hidden;
+    border-radius: 20px;
     
     ::before {
         content: "";
@@ -58,13 +59,17 @@ export const HighlightContent = styled(DefaultContent)`
         font: var(--Heading-8-300);
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         margin-bottom: 20px;
+        font-style: italic;
     }
 
     .highlight_bottom_container {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        height: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: #1D1F2150;
+        backdrop-filter: blur(10px);
     }
 
     h2 {
@@ -150,14 +155,6 @@ export const HighlightContent = styled(DefaultContent)`
 export const HighlightTitle = styled.a`
     display: flex;
     cursor: pointer;
-
-    .blue-detail {
-        display: flex;
-        width: 5px;
-        margin-right: 10px;
-        border-radius: 2px;
-        background-color: var(--theme-01);
-    }
 
     .highlight_title {
         width: 90%;
